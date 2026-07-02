@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politics 101 — The Political Rant</title>
+<meta name="description" content="A plain-language, unbiased guide to how Indian politics and government actually works — parties, Parliament, elections, and more.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#121212;
+    --ink:#ECE9E2;
+    --ink-dim:#8c8a85;
+    --rule:#34322e;
+    --red:#e8401f;
+    --yellow:#e8b800;
+    --display: 'Archivo Black', sans-serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    pointer-events:none;
+    background-image:radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size:3px 3px;
+    z-index:1;
+  }
+
+  .wrap{max-width:680px; margin:0 auto; position:relative; z-index:2;}
+
+  /* ---------- MASTHEAD ---------- */
+  header.masthead{
+    padding:28px 20px 22px;
+    border-bottom:3px solid var(--ink);
+  }
+  .eyebrow-row{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+    margin-bottom:14px;
+  }
+  .eyebrow-row .dot{color:var(--red);}
+
+  h1.title{
+    font-family:var(--display);
+    font-size:clamp(32px, 9vw, 46px);
+    line-height:0.95;
+    text-transform:uppercase;
+  }
+  h1.title .rant{color:var(--red);}
+
+  .nav-row{
+    display:flex;
+    gap:16px;
+    margin-top:16px;
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    flex-wrap:wrap;
+  }
+  .nav-row a{
+    color:var(--ink-dim);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+    transition:all 0.15s ease;
+  }
+  .nav-row a:hover, .nav-row a.active{
+    color:var(--ink);
+    border-bottom-color:var(--red);
+  }
+
+  /* ---------- CONTENT ---------- */
+  main{padding:36px 20px 80px;}
+
+  /* table of contents */
+  .toc{
+    border:1px solid var(--rule);
+    padding:20px 24px;
+    margin-bottom:40px;
+  }
+  .toc-title{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+    margin-bottom:12px;
+  }
+  .toc ol{
+    padding-left:18px;
+    color:var(--ink-dim);
+    font-size:14px;
+  }
+  .toc li{margin-bottom:6px;}
+  .toc a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--rule);
+  }
+  .toc a:hover{border-bottom-color:var(--red); color:var(--red);}
+
+  /* sections */
+  .section{
+    margin-bottom:52px;
+    padding-top:8px;
+  }
+
+  .section-eyebrow{
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--red);
+    margin-bottom:8px;
+  }
+
+  h2{
+    font-family:var(--display);
+    font-size:clamp(22px, 5vw, 28px);
+    line-height:1.15;
+    margin-bottom:16px;
+    scroll-margin-top:24px;
+  }
+
+  p{
+    font-size:15px;
+    color:var(--ink-dim);
+    margin-bottom:14px;
+    max-width:60ch;
+  }
+  p strong{color:var(--ink); font-weight:600;}
+
+  /* callout box */
+  .callout{
+    border-left:3px solid var(--red);
+    padding:14px 18px;
+    margin:20px 0;
+    background:rgba(232,64,31,0.06);
+  }
+  .callout p{margin-bottom:0; font-size:14px;}
+
+  /* party grid */
+  .party-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin:20px 0;
+  }
+  @media(max-width:480px){.party-grid{grid-template-columns:1fr;}}
+
+  .party-card{
+    border:1px solid var(--rule);
+    padding:16px;
+  }
+  .party-name{
+    font-family:var(--display);
+    font-size:15px;
+    margin-bottom:4px;
+  }
+  .party-full{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+    margin-bottom:10px;
+  }
+  .party-desc{
+    font-size:13.5px;
+    color:var(--ink-dim);
+    line-height:1.5;
+  }
+
+  /* structure diagram (CSS only) */
+  .structure{
+    margin:20px 0;
+    font-family:var(--mono);
+    font-size:12.5px;
+  }
+  .structure-row{
+    display:flex; align-items:center; gap:12px;
+    margin-bottom:10px;
+  }
+  .structure-label{
+    width:160px;
+    flex-shrink:0;
+    color:var(--ink);
+    font-weight:600;
+    letter-spacing:0.03em;
+  }
+  .structure-desc{
+    color:var(--ink-dim);
+    font-size:12px;
+    line-height:1.45;
+  }
+  .structure-connector{
+    width:160px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .dot-line{
+    flex:1;
+    border-bottom:1px dashed var(--rule);
+  }
+
+  /* divider */
+  .divider{
+    border:none;
+    border-top:1px solid var(--rule);
+    margin:0 0 40px;
+  }
+
+  /* footer */
+  footer{
+    padding:30px 20px 50px;
+    border-top:1px solid var(--rule);
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-dim);
+    line-height:1.7;
+  }
+  footer a{color:var(--ink); border-bottom:1px solid var(--red); text-decoration:none;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow-row"><span class="dot">●</span> POLITICS 101</div>
+    <h1 class="title">THE POLITICAL<br><span class="rant">RANT</span></h1>
+    <nav class="nav-row">
+      <a href="index.html">Feed</a>
+      <a href="politics101.html" class="active">Politics 101</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="toc">
+      <div class="toc-title">On this page</div>
+      <ol>
+        <li><a href="#system">How India's government is structured</a></li>
+        <li><a href="#parliament">What Parliament actually does</a></li>
+        <li><a href="#parties">The major political parties</a></li>
+        <li><a href="#elections">How elections work</a></li>
+        <li><a href="#centre-state">Centre vs. State — who controls what</a></li>
+        <li><a href="#media">Why the media landscape is complicated</a></li>
+      </ol>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="section" id="system">
+      <div class="section-eyebrow">Section 01</div>
+      <h2>How India's government is structured</h2>
+      <p>India is a <strong>federal parliamentary democratic republic</strong> — which sounds like a mouthful, so here's what each word actually means:</p>
+      <p><strong>Federal</strong> means power is split between a central (national) government and 28 state governments. States aren't just administrative units — they have real power over things like policing, healthcare, and education.</p>
+      <p><strong>Parliamentary</strong> means the head of government (the Prime Minister) is chosen by the elected legislature (Parliament), not directly by voters. You vote for your local MP, not directly for a Prime Minister.</p>
+      <p><strong>Democratic republic</strong> means the head of state (the President) is elected by elected officials rather than being a monarch, and that all power ultimately comes from the people through elections.</p>
+
+      <div class="structure">
+        <div class="structure-row">
+          <span class="structure-label">President</span>
+          <span class="structure-desc">Constitutional head of state. Largely ceremonial — signs bills, appoints the PM, but rarely acts independently.</span>
+        </div>
+        <div class="structure-row">
+          <span class="structure-label">Prime Minister</span>
+          <span class="structure-desc">Real head of government. Runs the country day to day, leads the Cabinet, controls foreign policy and national decisions.</span>
+        </div>
+        <div class="structure-row">
+          <span class="structure-label">Cabinet</span>
+          <span class="structure-desc">Senior ministers chosen by the PM, each heading a department (Finance, Defence, Home Affairs, etc.).</span>
+        </div>
+        <div class="structure-row">
+          <span class="structure-label">Parliament</span>
+          <span class="structure-desc">The legislature — makes laws, approves the budget, holds the government accountable. Two houses: Lok Sabha and Rajya Sabha.</span>
+        </div>
+        <div class="structure-row">
+          <span class="structure-label">Supreme Court</span>
+          <span class="structure-desc">The final authority on law and the Constitution. Can strike down laws passed by Parliament if they violate the Constitution.</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- SECTION 2 -->
+    <div class="section" id="parliament">
+      <div class="section-eyebrow">Section 02</div>
+      <h2>What Parliament actually does</h2>
+      <p>Parliament has two houses. They work together but are elected and composed differently.</p>
+      <p><strong>Lok Sabha (House of the People)</strong> is the more powerful house. It has 543 seats, each representing a geographic constituency. Elections happen every 5 years. Whichever party or coalition wins a majority (272+ seats) gets to form the government and their leader becomes Prime Minister.</p>
+      <p><strong>Rajya Sabha (Council of States)</strong> is the upper house representing the states. Its 245 members are elected by state legislators, not directly by voters. Members serve 6-year terms and a third of them are replaced every 2 years — so Rajya Sabha never fully dissolves the way Lok Sabha does. It can't be dissolved by the government, which makes it an important check on the ruling party.</p>
+      <div class="callout">
+        <p>Most major laws need to pass both houses. If the government controls Lok Sabha but not Rajya Sabha — which has happened often — passing legislation gets significantly harder. This is why parties spend considerable energy on state elections, which determine Rajya Sabha composition.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- SECTION 3 -->
+    <div class="section" id="parties">
+      <div class="section-eyebrow">Section 03</div>
+      <h2>The major political parties</h2>
+      <p>India has hundreds of registered political parties, but a handful dominate national politics. Most governments are formed by coalitions — alliances of multiple parties — because no single party regularly wins an outright majority on its own.</p>
+
+      <div class="party-grid">
+        <div class="party-card">
+          <div class="party-name">BJP</div>
+          <div class="party-full">Bharatiya Janata Party</div>
+          <div class="party-desc">Currently the largest party in Parliament. Generally considered right-of-centre, with a Hindu nationalist ideology. Part of the NDA coalition. Has governed at the national level since 2014.</div>
+        </div>
+        <div class="party-card">
+          <div class="party-name">INC</div>
+          <div class="party-full">Indian National Congress</div>
+          <div class="party-desc">The oldest major party, rooted in the independence movement. Historically the dominant party of Indian politics. Generally considered centre-left, secular in orientation. Led India for most of the post-independence period.</div>
+        </div>
+        <div class="party-card">
+          <div class="party-name">AAP</div>
+          <div class="party-full">Aam Aadmi Party</div>
+          <div class="party-desc">A newer party that emerged from anti-corruption protests in 2011. Currently governs Delhi and previously Punjab. Positions itself as a centrist alternative focused on governance and public services.</div>
+        </div>
+        <div class="party-card">
+          <div class="party-name">SP, TMC, DMK…</div>
+          <div class="party-full">Regional Parties</div>
+          <div class="party-desc">Dozens of powerful regional parties dominate individual states — Samajwadi Party in UP, TMC in West Bengal, DMK in Tamil Nadu, Shiv Sena in Maharashtra, and many more. They often hold the balance of power nationally.</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p>India's politics is not cleanly "left vs right" in the Western sense. Caste, religion, region, language, and community identity all play major roles in how parties form, how people vote, and what issues dominate elections.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- SECTION 4 -->
+    <div class="section" id="elections">
+      <div class="section-eyebrow">Section 04</div>
+      <h2>How elections work</h2>
+      <p>India uses a <strong>First Past the Post (FPTP)</strong> system — the candidate with the most votes in a constituency wins, even if they don't get a majority. This means a candidate can win with 30% of the vote if the other votes are split among several opponents.</p>
+      <p>This system tends to benefit larger parties and punish smaller ones. A party can win 20% of votes nationally but very few seats if those votes are spread thinly across constituencies rather than concentrated in specific areas.</p>
+      <p>The <strong>Election Commission of India</strong> is an independent constitutional body that runs elections. It announces election dates, enforces the Model Code of Conduct (a set of rules that kicks in once elections are called), and oversees the entire process. It is widely considered one of the more credible election management bodies in the world, though it is not without critics.</p>
+      <p><strong>General elections</strong> (for Lok Sabha) happen every 5 years and are the biggest democratic exercise on earth — nearly a billion eligible voters, spread over multiple phases across weeks due to logistical scale.</p>
+      <p><strong>State elections</strong> happen on their own schedules, separate from the general election, and are watched closely as political barometers between national votes.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- SECTION 5 -->
+    <div class="section" id="centre-state">
+      <div class="section-eyebrow">Section 05</div>
+      <h2>Centre vs. State — who controls what</h2>
+      <p>The Constitution divides powers between the central government and state governments across three lists:</p>
+      <p><strong>Union List</strong> — only the central government can legislate on these: defence, foreign affairs, nuclear energy, railways, banking, income tax.</p>
+      <p><strong>State List</strong> — only state governments can legislate: police, public order, agriculture, land, local government, state taxes.</p>
+      <p><strong>Concurrent List</strong> — both centre and state can legislate, but central law overrides state law if there's a conflict: education, criminal law, forests, economic planning.</p>
+      <div class="callout">
+        <p>A lot of political tension in India comes from this split. When the ruling party at the centre is different from the ruling party in a state, disputes over resources, governance, and jurisdiction are common — and often end up in court.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- SECTION 6 -->
+    <div class="section" id="media">
+      <div class="section-eyebrow">Section 06</div>
+      <h2>Why the media landscape is complicated</h2>
+      <p>India has hundreds of news channels, thousands of newspapers, and a massive digital media ecosystem — but quantity doesn't equal diversity of viewpoint. A few things are worth knowing as a news consumer:</p>
+      <p><strong>Most large media houses have ownership ties to businesses</strong> that depend on government relationships — licences, contracts, regulatory approvals. This creates structural pressure on editorial independence that doesn't require anyone to make a phone call or issue an order.</p>
+      <p><strong>Advertising is heavily concentrated.</strong> Government advertising (from central and state governments) is a significant revenue source for many outlets. Outlets perceived as hostile to the ruling establishment can find that revenue reduced.</p>
+      <p><strong>Regional language media</strong> often covers stories that English-language national media ignores entirely — and sometimes covers them very differently. What's front page in a Tamil or Marathi paper can be invisible in national English coverage.</p>
+      <p><strong>Independent digital outlets</strong> (The Wire, Newslaundry, The Ken, Article 14, and others) have emerged partly as a response to these pressures, funded through subscriptions or reader donations rather than advertising. They are not without their own editorial perspectives, but their funding model is different.</p>
+      <p>None of this means every outlet is compromised or that no good journalism gets done. It means reading across sources — which is the whole point of this site — is not just a good habit, it's genuinely necessary to get a fuller picture.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>This page is a factual overview intended to help readers understand the news, not to advocate for any political position. If you think something here is inaccurate or incomplete, get in touch.</p>
+    <p style="margin-top:10px;"><a href="index.html">← Back to the feed</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>
