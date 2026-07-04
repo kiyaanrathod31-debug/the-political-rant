@@ -21,6 +21,18 @@
 
 const STORIES = [
 
+  // ── 4 JULY 2026 ──────────────────────────────────────────
+
+  {
+    headline: "Guardian's Modi-Seychelles narrative doesn't hold up — the 'Blue Horizon' award is about local politics, not India",
+    blurb: "OpIndia pushes back on a Guardian report framing a Seychelles diplomatic distinction as Modi-linked, arguing the award stems from internal Seychelles political restructuring and has nothing to do with the Indian PM.",
+    source: "OpIndia",
+    url: "https://www.opindia.com",
+    category: "world",
+    lean: "right",
+    date: "2026-07-04"
+  },
+
   // ── 3 JULY 2026 ──────────────────────────────────────────
 
   {
@@ -33,7 +45,7 @@ const STORIES = [
     date: "2026-07-03"
   },
   {
-    headline: "GST collections hit ₹1.95 lakh crore in June — but critics say the numbers flatter to deceive",
+    headline: "GST collections hit Rs 1.95 lakh crore in June — but critics say the numbers flatter to deceive",
     blurb: "A 13.9% year-on-year rise sounds impressive, but analysts point out the jump is largely driven by imported inflation and a weaker rupee, not actual growth in domestic economic activity.",
     source: "Mint",
     url: "https://www.livemint.com",
@@ -42,7 +54,7 @@ const STORIES = [
     date: "2026-07-03"
   },
   {
-    headline: "Delhi riots accused spent years behind bars without trial — Supreme Court says 'bail is not punishment'",
+    headline: "Delhi riots accused spent years behind bars without trial — Supreme Court says bail is not punishment",
     blurb: "An editorial flags the growing paradox: UAPA's stringent bail conditions mean accused persons are effectively imprisoned before being convicted, with the Supreme Court itself divided on whether prolonged incarceration should override statutory bail restrictions.",
     source: "The Hindu",
     url: "https://www.thehindu.com",
@@ -59,60 +71,6 @@ const STORIES = [
     lean: "center",
     date: "2026-07-03"
   },
-  {
-  headline: "Modi-Takaichi summit produces 16 outcomes — semiconductors, energy, critical minerals on the table",
-  blurb: "Japanese PM Sanae Takaichi's official visit to India yielded a joint declaration on economic security covering AI, clean energy, batteries and supply chain resilience. Both countries mark 75 years of diplomatic ties.",
-  source: "OpIndia",
-  url: "https://www.opindia.com/news-updates/india-japan-summit-meeting-between-pm-modi-and-pm-takaichi-results-in-16-outcomes/",
-  category: "world",
-  lean: "right",
-  date: "2026-07-02"
-},
-{
-  headline: "₹2.38 lakh crore defence proposals cleared — S-400 systems and transport aircraft among the big-ticket items",
-  blurb: "The Defence Acquisition Council gave the nod to a major package of proposals aimed at strengthening India's air defence and surveillance capabilities amid ongoing regional tensions.",
-  source: "Swarajya",
-  url: "https://swarajyamag.com/topic/india",
-  category: "defence",
-  lean: "right",
-  date: "2026-07-02"
-},
-{
-  headline: "300 railway projects spanning 13,808 km sanctioned under PM Gati Shakti since FY23",
-  blurb: "The Centre says the National Master Plan has driven a significant expansion of rail infrastructure across the country over the past three years, framing it as a backbone of the broader logistics modernisation push.",
-  source: "Swarajya",
-  url: "https://swarajyamag.com/topic/india",
-  category: "economy",
-  lean: "right",
-  date: "2026-07-02"
-},
-{
-  headline: "Modi chairs emergency meeting with states on fuel security as West Asia crisis drives oil price surge",
-  blurb: "With crude prices climbing amid the ongoing West Asia conflict, the PM convened a high-level meeting to coordinate supply chain responses and strategic stockpiling plans with state governments.",
-  source: "Swarajya",
-  url: "https://swarajyamag.com/topic/india",
-  category: "national",
-  lean: "right",
-  date: "2026-07-02"
-},
-{
-  headline: "Guardian's Modi-Seychelles narrative doesn't hold up — the 'Blue Horizon' award is about local politics, not India",
-  blurb: "OpIndia pushes back on a Guardian report framing a Seychelles diplomatic distinction as Modi-linked, arguing the award stems from internal Seychelles political restructuring and has nothing to do with the Indian PM.",
-  source: "OpIndia",
-  url: "https://www.opindia.com",
-  category: "world",
-  lean: "right",
-  date: "2026-07-04"
-},
-{
-  headline: "India reimposes windfall tax on aviation fuel and diesel exports as oil prices spike",
-  blurb: "The government brought back the levy as West Asia tensions pushed up crude prices, aiming to curb exports and protect domestic fuel availability ahead of the monsoon season.",
-  source: "Swarajya",
-  url: "https://swarajyamag.com/topic/india",
-  category: "economy",
-  lean: "right",
-  date: "2026-07-01"
-},
   {
     headline: "US Supreme Court birthright citizenship ruling: less change for Indians than headlines suggest",
     blurb: "Despite the noise, legal experts say the ruling's practical impact on Indian immigrants and their children is narrower than initial reporting indicated — the pathways most Indians use remain intact.",
@@ -135,12 +93,30 @@ const STORIES = [
   // ── 2 JULY 2026 ──────────────────────────────────────────
 
   {
+    headline: "Modi-Takaichi summit produces 16 outcomes — semiconductors, energy, critical minerals on the table",
+    blurb: "Japanese PM Sanae Takaichi's official visit to India yielded a joint declaration on economic security covering AI, clean energy, batteries and supply chain resilience. Both countries mark 75 years of diplomatic ties.",
+    source: "OpIndia",
+    url: "https://www.opindia.com/news-updates/india-japan-summit-meeting-between-pm-modi-and-pm-takaichi-results-in-16-outcomes/",
+    category: "world",
+    lean: "right",
+    date: "2026-07-02"
+  },
+  {
     headline: "Outlook: BJP now within reach of two-thirds majority — but the path runs through the DMK",
     blurb: "Through a combination of election wins, defections, and shifting alliances, the NDA is inching toward a supermajority in both houses. Whether the DMK abstains or opposes on a revised Delimitation Bill could determine whether it gets there.",
     source: "Outlook India",
     url: "https://www.outlookindia.com",
     category: "national",
     lean: "center",
+    date: "2026-07-02"
+  },
+  {
+    headline: "Rs 2.38 lakh crore defence proposals cleared — S-400 systems and transport aircraft among the big-ticket items",
+    blurb: "The Defence Acquisition Council gave the nod to a major package of proposals aimed at strengthening India's air defence and surveillance capabilities amid ongoing regional tensions.",
+    source: "Swarajya",
+    url: "https://swarajyamag.com/topic/india",
+    category: "defence",
+    lean: "right",
     date: "2026-07-02"
   },
   {
@@ -153,12 +129,30 @@ const STORIES = [
     date: "2026-07-02"
   },
   {
+    headline: "300 railway projects spanning 13,808 km sanctioned under PM Gati Shakti since FY23",
+    blurb: "The Centre says the National Master Plan has driven a significant expansion of rail infrastructure across the country over the past three years, framing it as a backbone of the broader logistics modernisation push.",
+    source: "Swarajya",
+    url: "https://swarajyamag.com/topic/india",
+    category: "economy",
+    lean: "right",
+    date: "2026-07-02"
+  },
+  {
     headline: "The Print: INDIA bloc is fracturing — and BJP is the quiet beneficiary",
     blurb: "Regional parties drifting away from the opposition coalition, combined with TMC's declining clout in Bengal, is reducing the bloc's ability to mount a unified resistance to BJP's constitutional agenda.",
     source: "ThePrint",
     url: "https://theprint.in",
     category: "national",
     lean: "center",
+    date: "2026-07-02"
+  },
+  {
+    headline: "Modi chairs emergency meeting with states on fuel security as West Asia crisis drives oil price surge",
+    blurb: "With crude prices climbing amid the ongoing West Asia conflict, the PM convened a high-level meeting to coordinate supply chain responses and strategic stockpiling plans with state governments.",
+    source: "Swarajya",
+    url: "https://swarajyamag.com/topic/india",
+    category: "national",
+    lean: "right",
     date: "2026-07-02"
   },
   {
@@ -189,7 +183,19 @@ const STORIES = [
     date: "2026-07-02"
   },
 
-  // ── RECENT MAJOR STORIES (June–July 2026) ─────────────────
+  // ── 1 JULY 2026 ──────────────────────────────────────────
+
+  {
+    headline: "India reimposes windfall tax on aviation fuel and diesel exports as oil prices spike",
+    blurb: "The government brought back the levy as West Asia tensions pushed up crude prices, aiming to curb exports and protect domestic fuel availability ahead of the monsoon season.",
+    source: "Swarajya",
+    url: "https://swarajyamag.com/topic/india",
+    category: "economy",
+    lean: "right",
+    date: "2026-07-01"
+  },
+
+  // ── RECENT MAJOR STORIES ──────────────────────────────────
 
   {
     headline: "Shubhanshu Shukla's memoir lands a year after his ISS mission — and the political symbolism is unmistakable",
@@ -202,7 +208,7 @@ const STORIES = [
   },
   {
     headline: "131st Amendment falls short in Lok Sabha — what happens to women's reservation now?",
-    blurb: "The government's Delimitation Bill failed to get the required two-thirds majority in April, winning 298 votes against the 352 needed. The defeat has left women's reservation — which was bundled into the same package — in limbo, with both sides blaming each other.",
+    blurb: "The government's Delimitation Bill failed to get the required two-thirds majority in April, winning 298 votes against the 352 needed. The defeat has left women's reservation in limbo, with both sides blaming each other.",
     source: "ThePrint",
     url: "https://theprint.in",
     category: "national",
