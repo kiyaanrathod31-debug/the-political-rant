@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"> 
-<meta name="google-site-verification" content="O5F91mJ8Juc4Kshj0Erz0IYTDTOReD1HM2LjMpsR1rs" />
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Political Rant — Unfiltered India</title>
 <meta name="description" content="Raw, unfiltered news aggregation from across the Indian political spectrum.">
@@ -37,7 +36,6 @@
   }
   a{color:inherit;}
 
-  /* texture: faint grain overlay */
   body::before{
     content:"";
     position:fixed; inset:0;
@@ -85,24 +83,17 @@
   }
 
   .nav-row{
-    display:flex;
-    gap:16px;
-    margin-top:16px;
-    font-family:var(--mono);
-    font-size:11.5px;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
+    display:flex; gap:16px; margin-top:16px;
+    font-family:var(--mono); font-size:11.5px;
+    letter-spacing:0.04em; text-transform:uppercase;
   }
   .nav-row a{
-    color:var(--ink-dim);
-    text-decoration:none;
-    border-bottom:1px solid transparent;
-    padding-bottom:2px;
+    color:var(--ink-dim); text-decoration:none;
+    border-bottom:1px solid transparent; padding-bottom:2px;
     transition:all 0.15s ease;
   }
   .nav-row a:hover, .nav-row a.active{
-    color:var(--ink);
-    border-bottom-color:var(--red);
+    color:var(--ink); border-bottom-color:var(--red);
   }
 
   /* ---------- FILTERS ---------- */
@@ -115,113 +106,188 @@
   .filters::-webkit-scrollbar{display:none;}
   .chip{
     flex:0 0 auto;
-    font-family:var(--mono);
-    font-size:11.5px;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
+    font-family:var(--mono); font-size:11.5px;
+    letter-spacing:0.04em; text-transform:uppercase;
     padding:7px 13px;
-    border:1px solid var(--rule);
-    border-radius:100px;
-    background:transparent;
-    color:var(--ink-dim);
-    cursor:pointer;
-    transition:all 0.15s ease;
-    white-space:nowrap;
+    border:1px solid var(--rule); border-radius:100px;
+    background:transparent; color:var(--ink-dim);
+    cursor:pointer; transition:all 0.15s ease; white-space:nowrap;
   }
   .chip:hover{border-color:var(--ink-dim); color:var(--ink);}
   .chip.active{
-    background:var(--ink);
-    color:var(--paper);
-    border-color:var(--ink);
-    font-weight:600;
+    background:var(--ink); color:var(--paper);
+    border-color:var(--ink); font-weight:600;
   }
 
   /* ---------- FEED ---------- */
   .feed{padding:6px 20px 80px;}
 
+  /* card is now a div, not an <a> */
   .card{
-    display:block;
-    text-decoration:none;
     border-bottom:1px solid var(--rule);
-    padding:24px 0;
+    padding:24px 0 0;
+  }
+
+  .card-link{
+    display:block; text-decoration:none;
+    padding-bottom:16px;
     transition:opacity 0.15s ease;
   }
-  .card:hover .headline{color:var(--red);}
-  .card:hover{opacity:0.96;}
+  .card-link:hover .headline{color:var(--red);}
+  .card-link:hover{opacity:0.96;}
 
   .card-meta{
     display:flex; align-items:center; gap:10px;
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-    margin-bottom:10px;
-    flex-wrap:wrap;
+    font-family:var(--mono); font-size:11px;
+    letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--ink-dim); margin-bottom:10px; flex-wrap:wrap;
   }
-  .source-tag{
-    color:var(--ink);
-    font-weight:600;
-  }
+  .source-tag{color:var(--ink); font-weight:600;}
   .lean-badge{
-    font-size:9.5px;
-    padding:2px 7px;
-    border-radius:3px;
-    border:1px solid currentColor;
+    font-size:9.5px; padding:2px 7px;
+    border-radius:3px; border:1px solid currentColor;
   }
   .lean-left{color:#5b9be8;}
   .lean-right{color:var(--red);}
   .lean-center{color:var(--ink-dim);}
   .lean-state-run{color:var(--yellow);}
-
-  .cat-tag{
-    color:var(--ink-dim);
-  }
+  .cat-tag{color:var(--ink-dim);}
   .cat-tag::before{content:"· ";}
 
   .headline{
-    font-family:var(--display);
-    font-size:21px;
-    line-height:1.22;
-    text-transform:none;
-    margin-bottom:8px;
-    transition:color 0.15s ease;
+    font-family:var(--display); font-size:21px;
+    line-height:1.22; text-transform:none;
+    margin-bottom:8px; transition:color 0.15s ease;
   }
-
   .blurb{
-    font-size:14.5px;
-    color:var(--ink-dim);
-    margin-bottom:10px;
-    max-width:58ch;
+    font-size:14.5px; color:var(--ink-dim);
+    margin-bottom:10px; max-width:58ch;
   }
-
+  .card-bottom-row{
+    display:flex; align-items:center;
+    justify-content:space-between; gap:12px;
+    padding-bottom:16px;
+  }
   .read-link{
-    font-family:var(--mono);
-    font-size:11.5px;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
-    color:var(--ink);
-    display:inline-flex; align-items:center; gap:5px;
+    font-family:var(--mono); font-size:11.5px;
+    letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--ink); display:inline-flex; align-items:center; gap:5px;
   }
   .read-link::after{content:"→"; transition:transform 0.15s ease;}
-  .card:hover .read-link::after{transform:translateX(3px);}
+  .card-link:hover .read-link::after{transform:translateX(3px);}
+
+  /* ---------- ASK AI BUTTON ---------- */
+  .ask-ai-btn{
+    font-family:var(--mono); font-size:11px;
+    letter-spacing:0.04em; text-transform:uppercase;
+    background:transparent; border:1px solid var(--rule);
+    color:var(--ink-dim); padding:6px 12px;
+    cursor:pointer; transition:all 0.15s ease;
+    display:inline-flex; align-items:center; gap:5px;
+    white-space:nowrap; flex-shrink:0;
+  }
+  .ask-ai-btn:hover{border-color:var(--red); color:var(--red);}
+  .ask-ai-btn.open{border-color:var(--red); color:var(--red); background:rgba(232,64,31,0.06);}
+  .ask-ai-btn .chevron{transition:transform 0.2s ease; display:inline-block;}
+  .ask-ai-btn.open .chevron{transform:rotate(180deg);}
+
+  /* ---------- CHAT PANEL ---------- */
+  .chat-panel{
+    max-height:0; overflow:hidden;
+    transition:max-height 0.3s ease;
+    background:#1a1a1a;
+    border-left:2px solid var(--red);
+  }
+  .chat-panel.open{max-height:600px;}
+
+  .chat-inner{padding:16px;}
+
+  .chat-messages{
+    display:flex; flex-direction:column; gap:12px;
+    margin-bottom:14px;
+    max-height:300px; overflow-y:auto;
+  }
+
+  .msg{
+    font-size:14px; line-height:1.55;
+    max-width:100%;
+  }
+  .msg-ai{
+    color:var(--ink);
+  }
+  .msg-ai .msg-label{
+    font-family:var(--mono); font-size:10px;
+    letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--red); margin-bottom:4px;
+  }
+  .msg-user{
+    color:var(--ink-dim);
+    text-align:right;
+  }
+  .msg-user .msg-label{
+    font-family:var(--mono); font-size:10px;
+    letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--ink-dim); margin-bottom:4px;
+  }
+  .msg-text{
+    background:#242424; padding:10px 14px;
+    border-radius:2px; display:inline-block;
+    text-align:left;
+  }
+  .msg-ai .msg-text{background:#242424;}
+  .msg-user .msg-text{background:#1e1e1e; color:var(--ink-dim);}
+
+  .typing{
+    display:inline-flex; gap:4px; align-items:center;
+    padding:10px 14px; background:#242424;
+  }
+  .typing span{
+    width:5px; height:5px; border-radius:50%;
+    background:var(--ink-dim); animation:blink 1.2s infinite;
+  }
+  .typing span:nth-child(2){animation-delay:0.2s;}
+  .typing span:nth-child(3){animation-delay:0.4s;}
+  @keyframes blink{0%,80%,100%{opacity:0.2;}40%{opacity:1;}}
+
+  .chat-input-row{
+    display:flex; gap:8px; align-items:stretch;
+  }
+  .chat-input{
+    flex:1; background:#242424;
+    border:1px solid var(--rule); color:var(--ink);
+    font-family:var(--body); font-size:14px;
+    padding:10px 14px; outline:none;
+    transition:border-color 0.15s ease;
+  }
+  .chat-input:focus{border-color:var(--ink-dim);}
+  .chat-input::placeholder{color:var(--ink-dim);}
+  .chat-send{
+    font-family:var(--mono); font-size:11px;
+    letter-spacing:0.04em; text-transform:uppercase;
+    background:var(--ink); color:var(--paper);
+    border:none; padding:10px 14px; cursor:pointer;
+    transition:opacity 0.15s ease; white-space:nowrap;
+  }
+  .chat-send:hover{opacity:0.85;}
+  .chat-send:disabled{opacity:0.4; cursor:not-allowed;}
+
+  .chat-disclaimer{
+    font-family:var(--mono); font-size:10px;
+    color:var(--ink-dim); margin-top:10px;
+    letter-spacing:0.02em;
+  }
 
   .empty-state{
-    padding:60px 0;
-    text-align:center;
-    color:var(--ink-dim);
-    font-family:var(--mono);
-    font-size:13px;
+    padding:60px 0; text-align:center;
+    color:var(--ink-dim); font-family:var(--mono); font-size:13px;
   }
 
   /* ---------- FOOTER ---------- */
   footer{
     padding:30px 20px 50px;
     border-top:1px solid var(--rule);
-    font-family:var(--mono);
-    font-size:11px;
-    color:var(--ink-dim);
-    line-height:1.7;
+    font-family:var(--mono); font-size:11px;
+    color:var(--ink-dim); line-height:1.7;
   }
   footer strong{color:var(--ink);}
   footer a{color:var(--ink); border-bottom:1px solid var(--red);}
@@ -251,7 +317,6 @@
   </header>
 
   <nav class="filters" id="filters"></nav>
-
   <main class="feed" id="feed"></main>
 
   <footer>
@@ -264,11 +329,18 @@
 
 <script src="stories.js"></script>
 <script>
+  // ── CONFIG ──────────────────────────────────────────────────
+  // Replace with your Cloudflare Worker URL after setting it up
+  const WORKER_URL = 'https://soft-scene-602a.kiyaan-rathod31.workers.dev/';
+  // ────────────────────────────────────────────────────────────
+
   const CATEGORIES = ["all","national","states","economy","courts","defence","world","opinion"];
   const feedEl = document.getElementById('feed');
   const filtersEl = document.getElementById('filters');
   const countEl = document.getElementById('story-count');
   let activeCategory = "all";
+  let currentFiltered = [];
+  const chatHistories = {};
 
   function leanLabel(lean){
     const map = {left:"LEFT", right:"RIGHT", center:"CENTER", "state-run":"STATE-RUN"};
@@ -294,30 +366,164 @@
   function render(){
     renderFilters();
     const sorted = [...STORIES].sort((a,b) => new Date(b.date) - new Date(a.date));
-    const filtered = activeCategory === "all"
+    currentFiltered = activeCategory === "all"
       ? sorted
       : sorted.filter(s => s.category === activeCategory);
 
-    countEl.textContent = filtered.length + " STORIES";
+    countEl.textContent = currentFiltered.length + " STORIES";
 
-    if(filtered.length === 0){
+    if(currentFiltered.length === 0){
       feedEl.innerHTML = '<div class="empty-state">No stories in this category yet.</div>';
       return;
     }
 
-    feedEl.innerHTML = filtered.map(s => `
-      <a class="card" href="${s.url}" target="_blank" rel="noopener noreferrer">
-        <div class="card-meta">
-          <span class="source-tag">${s.source}</span>
-          <span class="lean-badge lean-${s.lean}">${leanLabel(s.lean)}</span>
-          <span class="cat-tag">${s.category}</span>
-          <span>· ${formatDate(s.date)}</span>
+    feedEl.innerHTML = currentFiltered.map((s, i) => `
+      <div class="card">
+        <a class="card-link" href="${s.url}" target="_blank" rel="noopener noreferrer">
+          <div class="card-meta">
+            <span class="source-tag">${s.source}</span>
+            <span class="lean-badge lean-${s.lean}">${leanLabel(s.lean)}</span>
+            <span class="cat-tag">${s.category}</span>
+            <span>· ${formatDate(s.date)}</span>
+          </div>
+          <div class="headline">${s.headline}</div>
+          <div class="blurb">${s.blurb}</div>
+        </a>
+        <div class="card-bottom-row">
+          <span class="read-link" onclick="window.open('${s.url}','_blank')">Read on ${s.source}</span>
+          <button class="ask-ai-btn" id="btn-${i}" onclick="toggleChat(${i})">
+            Ask AI <span class="chevron">▾</span>
+          </button>
         </div>
-        <div class="headline">${s.headline}</div>
-        <div class="blurb">${s.blurb}</div>
-        <span class="read-link">Read on ${s.source}</span>
-      </a>
+        <div class="chat-panel" id="chat-${i}">
+          <div class="chat-inner">
+            <div class="chat-messages" id="messages-${i}"></div>
+            <div class="chat-input-row">
+              <input class="chat-input" id="input-${i}" type="text"
+                placeholder="Ask a follow-up question..."
+                onkeydown="if(event.key==='Enter' && !event.shiftKey) sendMessage(${i})">
+              <button class="chat-send" id="send-${i}" onclick="sendMessage(${i})">Send</button>
+            </div>
+            <div class="chat-disclaimer">AI explanations are a starting point, not a substitute for reading the full article.</div>
+          </div>
+        </div>
+      </div>
     `).join('');
+  }
+
+  // ── CHAT LOGIC ───────────────────────────────────────────────
+
+  function toggleChat(i){
+    const panel = document.getElementById('chat-' + i);
+    const btn = document.getElementById('btn-' + i);
+    const isOpen = panel.classList.contains('open');
+
+    // Close all other panels
+    document.querySelectorAll('.chat-panel').forEach(p => p.classList.remove('open'));
+    document.querySelectorAll('.ask-ai-btn').forEach(b => b.classList.remove('open'));
+
+    if(!isOpen){
+      panel.classList.add('open');
+      btn.classList.add('open');
+      // Auto-explain on first open
+      if(!chatHistories[i]){
+        chatHistories[i] = [];
+        autoExplain(i);
+      }
+    }
+  }
+
+  async function autoExplain(i){
+    const s = currentFiltered[i];
+    addTyping(i);
+
+    const system = `You are a helpful assistant for The Political Rant, an Indian political news aggregator. 
+A reader wants to briefly understand a news story. Give a clear, neutral, plain-language explanation in 3-4 sentences. 
+Do not take any political side. Do not editorialize. Use simple language any Indian reader can understand.`;
+
+    const firstMsg = `Briefly explain this Indian news story to me:
+Headline: ${s.headline}
+Summary: ${s.blurb}
+Source: ${s.source} (${s.lean}-leaning outlet)
+Category: ${s.category}`;
+
+    chatHistories[i].push({role:'user', content: firstMsg});
+    const reply = await callWorker(chatHistories[i], system);
+    chatHistories[i].push({role:'assistant', content: reply});
+    removeTyping(i);
+    addMessage(i, 'ai', reply);
+  }
+
+  async function sendMessage(i){
+    const input = document.getElementById('input-' + i);
+    const sendBtn = document.getElementById('send-' + i);
+    const text = input.value.trim();
+    if(!text) return;
+
+    input.value = '';
+    input.disabled = true;
+    sendBtn.disabled = true;
+
+    addMessage(i, 'user', text);
+    addTyping(i);
+
+    const s = currentFiltered[i];
+    chatHistories[i].push({role:'user', content: text});
+
+    const system = `You are a helpful assistant for The Political Rant, an Indian political news aggregator.
+The reader is asking about this news story: "${s.headline}" — ${s.blurb} (Source: ${s.source})
+Answer clearly, neutrally and concisely. Do not take any political side. Use simple language.`;
+
+    const reply = await callWorker(chatHistories[i], system);
+    chatHistories[i].push({role:'assistant', content: reply});
+    removeTyping(i);
+    addMessage(i, 'ai', reply);
+
+    input.disabled = false;
+    sendBtn.disabled = false;
+    input.focus();
+  }
+
+  async function callWorker(messages, system){
+    if(WORKER_URL === 'YOUR_CLOUDFLARE_WORKER_URL_HERE'){
+      return 'The AI chatbot is not set up yet. The site owner needs to configure the Cloudflare Worker — see the README for instructions.';
+    }
+    try {
+      const res = await fetch(WORKER_URL, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({messages, system})
+      });
+      const data = await res.json();
+      if(data.content && data.content[0]) return data.content[0].text;
+      return 'Sorry, something went wrong. Please try again.';
+    } catch(err){
+      return 'Could not reach the AI. Please check your connection and try again.';
+    }
+  }
+
+  function addMessage(i, role, text){
+    const box = document.getElementById('messages-' + i);
+    const div = document.createElement('div');
+    div.className = 'msg msg-' + role;
+    div.innerHTML = `<div class="msg-label">${role === 'ai' ? 'AI Explainer' : 'You'}</div><div class="msg-text">${text}</div>`;
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+  }
+
+  function addTyping(i){
+    const box = document.getElementById('messages-' + i);
+    const div = document.createElement('div');
+    div.className = 'msg msg-ai';
+    div.id = 'typing-' + i;
+    div.innerHTML = '<div class="msg-label">AI Explainer</div><div class="typing"><span></span><span></span><span></span></div>';
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+  }
+
+  function removeTyping(i){
+    const t = document.getElementById('typing-' + i);
+    if(t) t.remove();
   }
 
   render();
