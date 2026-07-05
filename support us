@@ -361,7 +361,7 @@
         <div class="upi-right">
           <div class="upi-box">
             <!-- REPLACE yourname@upi WITH YOUR ACTUAL UPI ID -->
-            <span class="upi-id" id="upi-id">yourname@upi</span>
+            <span class="upi-id" id="upi-id">9392615805@fam</span>
             <button class="upi-copy" onclick="copyUPI()">Copy ID</button>
           </div>
           <div class="upi-steps">
