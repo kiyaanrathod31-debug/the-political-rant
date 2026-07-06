@@ -1,291 +1,185 @@
 // ============================================================
 // THE POLITICAL RANT — STORY FEED
 // ============================================================
+// HOW TO EDIT THIS ON YOUR PHONE:
+//
+// Option A (easiest) — GitHub Mobile App:
+//   Download "GitHub" from the App Store or Play Store
+//   Open your repo → tap the file → tap the pencil icon → edit → commit
+//
+// Option B — GitHub in your phone browser:
+//   Go to github.com → open your repo → tap stories.js
+//   Tap the pencil icon (top right) → edit → scroll down → Commit changes
+//
 // HOW TO ADD A NEW STORY:
-// Copy one block below, paste it at the TOP of the STORIES array
-// (newest first), and fill in your own details. That's it —
-// save this file, refresh the site, done. No build step needed.
+//   Copy one block below, paste at the TOP of the STORIES array.
+//   Fill in your own headline and blurb — don't copy the source's
+//   exact words. Paste the direct article URL (not the homepage).
+//   Save (commit). Site updates in ~30 seconds. Done.
 //
 // FIELDS:
-//   headline   - your own short, punchy framing (1 line). Do NOT
-//                copy-paste the source's exact headline text —
-//                write your own take on what happened.
-//   blurb      - 1-2 sentences of context, in your own words.
-//   source     - name of the outlet you're linking to
-//   url        - the actual article URL on the source's site
-//   category   - one of: "national", "states", "economy",
-//                "courts", "defence", "world", "opinion"
-//   lean       - the outlet's general leaning: "left", "right", "center", "state-run"
-//   date       - "YYYY-MM-DD"
+//   headline - your own short punchy framing (1 line)
+//   blurb    - 1-2 sentences of context, your own words
+//   source   - outlet name
+//   url      - direct link to the specific article
+//   category - national / states / economy / courts / defence / world / opinion
+//   lean     - left / right / center / state-run
+//   date     - "YYYY-MM-DD"
 // ============================================================
 
 const STORIES = [
 
-  // ── 4 JULY 2026 ──────────────────────────────────────────
+  // ── 6 JULY 2026 ──────────────────────────────────────────
 
   {
-    headline: "Guardian's Modi-Seychelles narrative doesn't hold up — the 'Blue Horizon' award is about local politics, not India",
-    blurb: "OpIndia pushes back on a Guardian report framing a Seychelles diplomatic distinction as Modi-linked, arguing the award stems from internal Seychelles political restructuring and has nothing to do with the Indian PM.",
+    headline: "Modi lands in Jakarta — six-day Indo-Pacific tour begins with Indonesia, then Australia and New Zealand",
+    blurb: "PM Modi's fourth visit to Indonesia kicks off today, with bilateral talks with President Prabowo and a visit to the Prambanan temple in Yogyakarta. The tour continues to Melbourne and then Auckland — the first Indian PM state visit to New Zealand in four decades.",
+    source: "DD India",
+    url: "https://ddindia.co.in/2026/07/pm-modi-to-visit-indonesia-australia-and-new-zealand-from-july-6-11-to-hold-bilateral-talks-address-diaspora/",
+    category: "world",
+    lean: "state-run",
+    date: "2026-07-06"
+  },
+  {
+    headline: "Monsoon Session announced: Parliament meets July 20 — Delimitation Bill, One Nation One Election, and the automatic arrest-removal clause all on the table",
+    blurb: "President Murmu has summoned both Houses for July 20 to August 13. The government wants to push through three major bills, including a provision that would automatically remove a PM or CM if they stay in judicial custody for 30 days or more.",
+    source: "Daily Pioneer",
+    url: "https://dailypioneer.com/news/parliament-monsoon-session-to-begin-july-20",
+    category: "national",
+    lean: "center",
+    date: "2026-07-06"
+  },
+  {
+    headline: "Opposition gearing up to corner Rajnath Singh over Operation Sindoor casualty figures the moment Parliament opens",
+    blurb: "Congress has accused the Defence Minister of telling a 'straightforward, clear-cut lie' to the House about Indian soldier casualties during the operation. The party plans to push for privilege proceedings the moment the Monsoon Session begins.",
+    source: "Doon United",
+    url: "https://www.doonited.in/parliaments-monsoon-session-to-begin-july-20-opposition-likely-to-raise-rajnaths-lie/",
+    category: "national",
+    lean: "left",
+    date: "2026-07-06"
+  },
+  {
+    headline: "US judge rejects DOJ's explanation for dropping Adani case — the Indian orders cited never examined the bribery allegations at all",
+    blurb: "Forced by a federal judge to justify abandoning the Adani prosecution, the DOJ pointed to three Indian decisions as evidence the matter had been locally investigated. The Wire's analysis shows none of the three actually looked at whether public officials received illegal payments.",
+    source: "The Wire",
+    url: "https://m.thewire.in/topic/law/forced-to-explain-adani-u-turn-doj-cites-indian-orders-that-never-examined-bribery-allegations",
+    category: "courts",
+    lean: "left",
+    date: "2026-07-06"
+  },
+  {
+    headline: "Mumbai on red alert as monsoon batters the city — trains delayed, roads flooded, high tide warning",
+    blurb: "Heavy downpours and winds of up to 65 kmph have caused severe waterlogging across Mumbai, with Western Railway trains running late and several low-lying areas cut off. A high tide is expected this afternoon.",
+    source: "NDTV",
+    url: "https://www.ndtv.com/india-news",
+    category: "national",
+    lean: "center",
+    date: "2026-07-06"
+  },
+  {
+    headline: "Teejan Bai, the legendary Pandavani singer who brought Chhattisgarh's oral tradition to the world, is dead",
+    blurb: "The Padma Vibhushan awardee passed away at AIIMS Raipur after a prolonged illness. Teejan Bai was one of the foremost practitioners of Pandavani, the ancient storytelling tradition based on the Mahabharata, and performed internationally for decades.",
+    source: "NDTV",
+    url: "https://www.ndtv.com/india-news",
+    category: "national",
+    lean: "center",
+    date: "2026-07-06"
+  },
+  {
+    headline: "Australian police investigating online threat against Modi ahead of Melbourne visit",
+    blurb: "The Australian Federal Police are examining a social media post threatening PM Modi before his July 8-10 visit to Melbourne. Indian and Australian security agencies are said to be reviewing the matter jointly.",
+    source: "Business Standard",
+    url: "https://www.business-standard.com/india-news",
+    category: "world",
+    lean: "center",
+    date: "2026-07-06"
+  },
+  {
+    headline: "Modi's tour is a statement — India is filling the Indo-Pacific vacuum left by Trump's retreat",
+    blurb: "The PMO frames the Indonesia-Australia-NZ tour as reinforcing India's Act East Policy and Quad commitments. Officials say the timing, as the US scales back regional engagement, is deliberate.",
+    source: "PM India",
+    url: "https://www.pmindia.gov.in/en/news_updates/pms-visit-to-indonesia-australia-and-new-zealand/",
+    category: "world",
+    lean: "state-run",
+    date: "2026-07-06"
+  },
+
+  // ── 5 JULY 2026 ──────────────────────────────────────────
+
+  {
+    headline: "Were senators right? Democratic senators asked weeks ago if Adani's $10 billion US investment offer bought him out of criminal charges",
+    blurb: "Warren and Blumenthal wrote to the DOJ in June asking whether Adani's reported offer to invest $10 billion in the US was the real reason charges were dropped. A federal judge this week effectively agreed the explanation given so far doesn't hold up.",
+    source: "The Wire",
+    url: "https://m.thewire.in/article/law/adani-us-investment-offer-influence-doj-bid-to-abandon-criminal-prosecution-democratic-senators-ask",
+    category: "courts",
+    lean: "left",
+    date: "2026-07-05"
+  },
+  {
+    headline: "TMC rebellion tips the scales — 20 of 28 Lok Sabha MPs break away as NDA inches toward two-thirds",
+    blurb: "The defection of the bulk of TMC's parliamentary group to the NCPI, with NDA support, combined with a similar split in the UBT faction, has dramatically shifted the numbers ahead of the Monsoon Session. The Speaker's ruling on whether they get recognised as separate groups will be closely watched.",
+    source: "Bombay Samachar",
+    url: "https://english.bombaysamachar.com/india-news/monsoon-session-2026-to-begin-on-july-20-parliament-to-meet-till-august-13-kiren-rijiju/",
+    category: "national",
+    lean: "center",
+    date: "2026-07-05"
+  },
+  {
+    headline: "The JPC bill that could remove a PM for being arrested: committee meeting on July 17 expected to keep the most contentious clause in",
+    blurb: "The Joint Parliamentary Committee examining the 130th Constitutional Amendment — which proposes automatic removal of the PM, Chief Ministers and ministers if they remain in judicial custody for 30 days — is expected to adopt its report before the Monsoon Session begins.",
+    source: "Doon United",
+    url: "https://www.doonited.in/parliaments-monsoon-session-to-begin-july-20-opposition-likely-to-raise-rajnaths-lie/",
+    category: "national",
+    lean: "center",
+    date: "2026-07-05"
+  },
+  {
+    headline: "Modi's three-nation tour is a masterclass in Indo-Pacific positioning — here is what India gains",
+    blurb: "Swarajya frames the Indonesia-Australia-NZ visits as strategic wins: critical minerals access, defence cooperation, diaspora diplomacy, and a signal to ASEAN that India is a dependable partner as American presence in the region wavers.",
+    source: "Swarajya",
+    url: "https://swarajyamag.com/topic/india",
+    category: "world",
+    lean: "right",
+    date: "2026-07-05"
+  },
+  {
+    headline: "India-Indonesia Prambanan visit: Modi's temple diplomacy and what it tells you about civilisational soft power",
+    blurb: "OpIndia covers Modi's planned visit to the UNESCO-listed Hindu temple complex in Yogyakarta as an example of India deploying its civilisational heritage as a tool of foreign policy with Hindu-majority and culturally adjacent nations.",
     source: "OpIndia",
     url: "https://www.opindia.com",
     category: "world",
     lean: "right",
+    date: "2026-07-05"
+  },
+  {
+    headline: "Tribune: Modi's CEOs Forum in Melbourne is where the real diplomacy happens — trade and tech, not just photo ops",
+    blurb: "Beyond the bilateral meetings, India's PM will address top Australian and Indian business leaders at the India-Australia CEOs Forum. With the India-Australia Economic Cooperation and Trade Agreement already in place, both sides are pushing for deeper investment and supply chain integration.",
+    source: "Tribune India",
+    url: "https://www.tribuneindia.com/news/anthony-albanese/pm-modi-to-interact-with-top-biz-leaders-address-diaspora-during-three-nation-visit-to-indonesia-australia-new-zealand",
+    category: "world",
+    lean: "center",
+    date: "2026-07-05"
+  },
+
+  // ── 4 JULY 2026 ──────────────────────────────────────────
+
+  {
+    headline: "IT Act Section 69A is being used to block satire and political cartoons — and the government won't say why",
+    blurb: "The Wire's investigation documents a pattern of social media takedowns targeting content critical of PM Modi, including political cartoons and opposition posts. Because takedown orders are issued under confidentiality, there is no public record, no stated reason, and no easy way to challenge them.",
+    source: "The Wire",
+    url: "https://m.thewire.in/article/government/online-censorship-it-act-narendra-modi",
+    category: "national",
+    lean: "left",
     date: "2026-07-04"
   },
-
-  // ── 3 JULY 2026 ──────────────────────────────────────────
-
   {
-    headline: "Supreme Court calls AI-hallucinated case citations in tribunal orders 'catastrophic'",
-    blurb: "The court struck down an NCLT ruling that relied on non-existent legal precedents generated by an AI tool, warning that fabricated material in judicial decisions strikes at the rule of law itself.",
-    source: "The Hindu",
-    url: "https://www.thehindu.com",
-    category: "courts",
-    lean: "center",
-    date: "2026-07-03"
-  },
-  {
-    headline: "GST collections hit Rs 1.95 lakh crore in June — but critics say the numbers flatter to deceive",
-    blurb: "A 13.9% year-on-year rise sounds impressive, but analysts point out the jump is largely driven by imported inflation and a weaker rupee, not actual growth in domestic economic activity.",
-    source: "Mint",
-    url: "https://www.livemint.com",
-    category: "economy",
-    lean: "center",
-    date: "2026-07-03"
-  },
-  {
-    headline: "Delhi riots accused spent years behind bars without trial — Supreme Court says bail is not punishment",
-    blurb: "An editorial flags the growing paradox: UAPA's stringent bail conditions mean accused persons are effectively imprisoned before being convicted, with the Supreme Court itself divided on whether prolonged incarceration should override statutory bail restrictions.",
-    source: "The Hindu",
-    url: "https://www.thehindu.com",
-    category: "courts",
-    lean: "center",
-    date: "2026-07-03"
-  },
-  {
-    headline: "US pulling back from Indo-Pacific — and India, Japan, Australia are moving to fill the space",
-    blurb: "As the Trump administration reduces its strategic footprint in the region, analysts say the Quad nations are quietly expanding cooperation to preserve the balance of power in the absence of American leadership.",
-    source: "Indian Express",
-    url: "https://indianexpress.com",
-    category: "world",
-    lean: "center",
-    date: "2026-07-03"
-  },
-  {
-    headline: "US Supreme Court birthright citizenship ruling: less change for Indians than headlines suggest",
-    blurb: "Despite the noise, legal experts say the ruling's practical impact on Indian immigrants and their children is narrower than initial reporting indicated — the pathways most Indians use remain intact.",
-    source: "Indian Express",
-    url: "https://indianexpress.com",
-    category: "world",
-    lean: "center",
-    date: "2026-07-03"
-  },
-  {
-    headline: "New EPF and EPS schemes notified — 270 million workers affected by the overhaul",
-    blurb: "The government has replaced the 1952 and 1995 provident fund frameworks with updated schemes aligned to the Code on Social Security. PF balances, UANs and past contributions remain protected, but the administrative structure changes significantly.",
-    source: "The Hindu",
-    url: "https://www.thehindu.com",
-    category: "economy",
-    lean: "center",
-    date: "2026-07-03"
-  },
-
-  // ── 2 JULY 2026 ──────────────────────────────────────────
-
-  {
-    headline: "Modi-Takaichi summit produces 16 outcomes — semiconductors, energy, critical minerals on the table",
-    blurb: "Japanese PM Sanae Takaichi's official visit to India yielded a joint declaration on economic security covering AI, clean energy, batteries and supply chain resilience. Both countries mark 75 years of diplomatic ties.",
-    source: "OpIndia",
-    url: "https://www.opindia.com/news-updates/india-japan-summit-meeting-between-pm-modi-and-pm-takaichi-results-in-16-outcomes/",
-    category: "world",
-    lean: "right",
-    date: "2026-07-02"
-  },
-  {
-    headline: "Outlook: BJP now within reach of two-thirds majority — but the path runs through the DMK",
-    blurb: "Through a combination of election wins, defections, and shifting alliances, the NDA is inching toward a supermajority in both houses. Whether the DMK abstains or opposes on a revised Delimitation Bill could determine whether it gets there.",
-    source: "Outlook India",
-    url: "https://www.outlookindia.com",
-    category: "national",
-    lean: "center",
-    date: "2026-07-02"
-  },
-  {
-    headline: "Rs 2.38 lakh crore defence proposals cleared — S-400 systems and transport aircraft among the big-ticket items",
-    blurb: "The Defence Acquisition Council gave the nod to a major package of proposals aimed at strengthening India's air defence and surveillance capabilities amid ongoing regional tensions.",
-    source: "Swarajya",
-    url: "https://swarajyamag.com/topic/india",
-    category: "defence",
-    lean: "right",
-    date: "2026-07-02"
-  },
-  {
-    headline: "Congress argues the Delimitation Bill is not about women — it's about redrawing the map of power",
-    blurb: "Rahul Gandhi told Parliament the 131st Amendment was a backdoor attempt to rewrite constituency boundaries in the BJP's favour, hidden behind the language of women's reservation. The bill was defeated in April but is widely expected to return.",
-    source: "Indian National Congress",
-    url: "https://inc.in",
+    headline: "HRW: India's proposed IT amendment rules would let any ministry censor any social media user — not just publishers",
+    blurb: "Human Rights Watch says the 2026 draft IT amendment rules would require ordinary social media users who comment on current affairs to comply with the same ethics framework as registered news publishers, with an executive committee empowered to order apologies or removals.",
+    source: "Human Rights Watch",
+    url: "https://www.hrw.org/news/2026/04/17/india-proposed-rules-to-expand-online-censorship",
     category: "national",
     lean: "left",
-    date: "2026-07-02"
-  },
-  {
-    headline: "300 railway projects spanning 13,808 km sanctioned under PM Gati Shakti since FY23",
-    blurb: "The Centre says the National Master Plan has driven a significant expansion of rail infrastructure across the country over the past three years, framing it as a backbone of the broader logistics modernisation push.",
-    source: "Swarajya",
-    url: "https://swarajyamag.com/topic/india",
-    category: "economy",
-    lean: "right",
-    date: "2026-07-02"
-  },
-  {
-    headline: "The Print: INDIA bloc is fracturing — and BJP is the quiet beneficiary",
-    blurb: "Regional parties drifting away from the opposition coalition, combined with TMC's declining clout in Bengal, is reducing the bloc's ability to mount a unified resistance to BJP's constitutional agenda.",
-    source: "ThePrint",
-    url: "https://theprint.in",
-    category: "national",
-    lean: "center",
-    date: "2026-07-02"
-  },
-  {
-    headline: "Modi chairs emergency meeting with states on fuel security as West Asia crisis drives oil price surge",
-    blurb: "With crude prices climbing amid the ongoing West Asia conflict, the PM convened a high-level meeting to coordinate supply chain responses and strategic stockpiling plans with state governments.",
-    source: "Swarajya",
-    url: "https://swarajyamag.com/topic/india",
-    category: "national",
-    lean: "right",
-    date: "2026-07-02"
-  },
-  {
-    headline: "India reduced to a spectator as Iran tensions ease — but analysts warn it was always going to",
-    blurb: "A reduction in US-Iran tensions gives India more room to balance its relationships in the Gulf, but also exposes how little control New Delhi has over the geopolitical forces that most affect its energy security.",
-    source: "Outlook India",
-    url: "https://www.outlookindia.com",
-    category: "world",
-    lean: "center",
-    date: "2026-07-02"
-  },
-  {
-    headline: "Air pollution plans need political will, not election-cycle optics",
-    blurb: "An editorial argues that India's repeated air quality targets have consistently been subordinated to electoral calculus, with clean air promises peaking before votes and disappearing after them.",
-    source: "The Hindu",
-    url: "https://www.thehindu.com",
-    category: "opinion",
-    lean: "center",
-    date: "2026-07-02"
-  },
-  {
-    headline: "New telecom rules notified — India formally buries the colonial-era Telegraph Act of 1885",
-    blurb: "The Telecommunications Act 2023's authorisation frameworks are now in force, replacing legislation that had governed Indian communications since the British Raj. Critics want to know what the new surveillance and interception powers actually look like in practice.",
-    source: "Business Standard",
-    url: "https://www.business-standard.com",
-    category: "national",
-    lean: "center",
-    date: "2026-07-02"
-  },
-
-  // ── 1 JULY 2026 ──────────────────────────────────────────
-
-  {
-    headline: "India reimposes windfall tax on aviation fuel and diesel exports as oil prices spike",
-    blurb: "The government brought back the levy as West Asia tensions pushed up crude prices, aiming to curb exports and protect domestic fuel availability ahead of the monsoon season.",
-    source: "Swarajya",
-    url: "https://swarajyamag.com/topic/india",
-    category: "economy",
-    lean: "right",
-    date: "2026-07-01"
-  },
-
-  // ── RECENT MAJOR STORIES ──────────────────────────────────
-
-  {
-    headline: "Shubhanshu Shukla's memoir lands a year after his ISS mission — and the political symbolism is unmistakable",
-    blurb: "The first Indian to visit the International Space Station has published 'The Second Orbit', released exactly one year after launch. The book lands as ISRO ramps up for the Gaganyaan crewed mission, and the government is keen to make space a national pride story.",
-    source: "Akashvani News",
-    url: "https://newsonair.gov.in",
-    category: "national",
-    lean: "state-run",
-    date: "2026-06-30"
-  },
-  {
-    headline: "131st Amendment falls short in Lok Sabha — what happens to women's reservation now?",
-    blurb: "The government's Delimitation Bill failed to get the required two-thirds majority in April, winning 298 votes against the 352 needed. The defeat has left women's reservation in limbo, with both sides blaming each other.",
-    source: "ThePrint",
-    url: "https://theprint.in",
-    category: "national",
-    lean: "center",
-    date: "2026-06-28"
-  },
-  {
-    headline: "BJP wins West Bengal in a landslide — Mamata Banerjee's 15-year run ends",
-    blurb: "Suvendu Adhikari was sworn in as Chief Minister after the BJP's historic majority in the April-May assembly elections, ending Trinamool Congress's dominance of the state. The Election Commission's controversial revision of electoral rolls before the vote remains contested.",
-    source: "Hindustan Times",
-    url: "https://www.hindustantimes.com",
-    category: "states",
-    lean: "center",
-    date: "2026-06-25"
-  },
-  {
-    headline: "Actor-turned-politician Vijay takes oath as Tamil Nadu's Chief Minister",
-    blurb: "The film star's political debut ended with him heading the state government after the May election results. How he governs — and whether he can hold his own against both the DMK and BJP at the national level — is the question Tamil Nadu is watching.",
-    source: "Indian Express",
-    url: "https://indianexpress.com",
-    category: "states",
-    lean: "center",
-    date: "2026-06-20"
-  },
-  {
-    headline: "Supreme Court grants bail to two Delhi riot accused after years of pre-trial detention under UAPA",
-    blurb: "Khalid Saifi and Tasleem Ahmad walked out on interim bail in May after the court raised concerns about how long they had been held without trial. A larger constitutional bench has been asked to rule on whether prolonged imprisonment can override UAPA's strict bail conditions.",
-    source: "The Wire",
-    url: "https://thewire.in",
-    category: "courts",
-    lean: "left",
-    date: "2026-06-15"
-  },
-  {
-    headline: "India-EU Free Trade Agreement signed — what it means for Indian workers and exporters",
-    blurb: "After years of negotiations, India and the EU finalised a trade deal that opens European markets to Indian goods. Business groups are cautiously optimistic; labour rights organisations want to know what environmental and worker-protection clauses actually made the cut.",
-    source: "Business Standard",
-    url: "https://www.business-standard.com",
-    category: "economy",
-    lean: "center",
-    date: "2026-06-10"
-  },
-  {
-    headline: "Naxalite insurgency declared over — home minister says the last fighters have surrendered or been neutralised",
-    blurb: "Amit Shah announced in March that the decades-long left-wing insurgency in central India had effectively ended after intensified security operations. Affected communities and civil society groups say the political and economic conditions that fuelled the movement remain unaddressed.",
-    source: "NDTV",
-    url: "https://www.ndtv.com",
-    category: "national",
-    lean: "center",
-    date: "2026-06-01"
-  },
-  {
-    headline: "NEET-UG 2026 cancelled after question paper leak — 1.8 million students face re-exam",
-    blurb: "The National Testing Agency ordered a full cancellation of this year's medical entrance exam after a paper leak was confirmed. It is the second consecutive year the exam has been compromised, reigniting the debate about whether a single high-stakes national test can even be administered securely at this scale.",
-    source: "India Today",
-    url: "https://www.indiatoday.in",
-    category: "national",
-    lean: "center",
-    date: "2026-05-20"
-  },
-  {
-    headline: "Dutch PM raises press freedom and minority rights concerns before meeting Modi — India dismisses it",
-    blurb: "Before bilateral talks in The Hague, Dutch PM Rob Jetten publicly flagged concerns about developments under the BJP government. The Indian side called it a lack of understanding. The exchange was barely covered in Indian mainstream media.",
-    source: "The Wire",
-    url: "https://thewire.in",
-    category: "world",
-    lean: "left",
-    date: "2026-05-15"
-  },
-  {
-    headline: "Nitin Nabin becomes BJP president — at 38, the youngest ever to hold the post",
-    blurb: "The five-time Bihar MLA was elected unopposed in January, with Modi skipping over an entire generation of BJP veterans to appoint him. The opposition is still trying to figure out who he is. The BJP says that's the point.",
-    source: "Mint",
-    url: "https://www.livemint.com",
-    category: "national",
-    lean: "center",
-    date: "2026-05-01"
+    date: "2026-07-04"
   }
 
 ];
