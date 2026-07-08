@@ -48,113 +48,77 @@
     border-bottom:3px solid var(--ink);
   }
   .eyebrow-row{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-    margin-bottom:14px;
+    font-family:var(--mono); font-size:11px;
+    letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--ink-dim); margin-bottom:14px;
   }
   .eyebrow-row .dot{color:var(--red);}
 
   h1.title{
     font-family:var(--display);
     font-size:clamp(32px, 9vw, 46px);
-    line-height:0.95;
-    text-transform:uppercase;
+    line-height:0.95; text-transform:uppercase;
   }
   h1.title .rant{color:var(--red);}
 
   .nav-row{
     display:flex; gap:16px; margin-top:16px;
     font-family:var(--mono); font-size:11.5px;
-    letter-spacing:0.04em; text-transform:uppercase;
-    flex-wrap:wrap;
+    letter-spacing:0.04em; text-transform:uppercase; flex-wrap:wrap;
   }
   .nav-row a{
-    color:var(--ink-dim);
-    border-bottom:1px solid transparent;
-    padding-bottom:2px;
-    transition:all 0.15s ease;
+    color:var(--ink-dim); border-bottom:1px solid transparent;
+    padding-bottom:2px; transition:all 0.15s ease;
   }
-  .nav-row a:hover, .nav-row a.active{
-    color:var(--ink);
-    border-bottom-color:var(--red);
-  }
+  .nav-row a:hover, .nav-row a.active{color:var(--ink); border-bottom-color:var(--red);}
 
   main{padding:36px 20px 80px;}
 
   .intro-eyebrow{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--red);
-    margin-bottom:10px;
+    font-family:var(--mono); font-size:11px;
+    letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--red); margin-bottom:10px;
   }
 
   h2.section-title{
     font-family:var(--display);
     font-size:clamp(26px, 7vw, 36px);
-    line-height:1.1;
-    margin-bottom:18px;
+    line-height:1.1; margin-bottom:18px;
   }
 
   p{
-    font-size:15px;
-    color:var(--ink-dim);
-    margin-bottom:14px;
-    max-width:58ch;
+    font-size:15px; color:var(--ink-dim);
+    margin-bottom:14px; max-width:58ch;
   }
   p strong{color:var(--ink); font-weight:600;}
 
-  /* ---------- COST BREAKDOWN ---------- */
-  .breakdown{
-    border-top:1px solid var(--rule);
-    padding-top:28px;
-    margin-top:8px;
-    margin-bottom:36px;
+  /* ---------- SHARE SECTION ---------- */
+  .share-section{
+    border:1px solid var(--rule);
+    padding:28px 24px;
+    margin-bottom:24px;
   }
-  .breakdown-title{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-    margin-bottom:20px;
+  .share-label{
+    font-family:var(--mono); font-size:10.5px;
+    letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--ink-dim); margin-bottom:8px;
   }
-  .breakdown-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    padding:12px 0;
-    border-bottom:1px solid var(--rule);
-    gap:20px;
+  .share-title{
+    font-family:var(--display); font-size:24px;
+    margin-bottom:10px;
   }
-  .breakdown-item{font-size:14.5px; color:var(--ink);}
-  .breakdown-cost{
-    font-family:var(--mono);
-    font-size:13px;
-    color:var(--ink-dim);
-    white-space:nowrap;
+  .share-desc{
+    font-size:14px; color:var(--ink-dim);
+    margin-bottom:20px; max-width:52ch; line-height:1.6;
   }
-  .breakdown-total{
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    padding:14px 0 0;
-    gap:20px;
+  .share-btn{
+    font-family:var(--mono); font-size:12px;
+    letter-spacing:0.05em; text-transform:uppercase;
+    background:var(--ink); color:var(--paper);
+    border:none; padding:12px 20px;
+    cursor:pointer; transition:opacity 0.15s ease;
   }
-  .breakdown-total .breakdown-item{
-    font-family:var(--display);
-    font-size:16px;
-  }
-  .breakdown-total .breakdown-cost{
-    font-family:var(--mono);
-    font-size:14px;
-    color:var(--ink);
-    font-weight:600;
-  }
+  .share-btn:hover{opacity:0.85;}
 
   /* ---------- UPI SECTION ---------- */
   .upi-section{
@@ -162,129 +126,66 @@
     padding:28px 24px;
     margin-bottom:28px;
   }
-
   .upi-label{
-    font-family:var(--mono);
-    font-size:10.5px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--red);
-    margin-bottom:8px;
+    font-family:var(--mono); font-size:10.5px;
+    letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--red); margin-bottom:8px;
   }
-
   .upi-title{
-    font-family:var(--display);
-    font-size:24px;
-    margin-bottom:10px;
+    font-family:var(--display); font-size:24px; margin-bottom:10px;
   }
-
   .upi-desc{
-    font-size:14px;
-    color:var(--ink-dim);
-    margin-bottom:24px;
-    max-width:52ch;
+    font-size:14px; color:var(--ink-dim);
+    margin-bottom:24px; max-width:52ch;
   }
-
-  /* QR + ID side by side on desktop, stacked on mobile */
   .upi-body{
-    display:flex;
-    gap:28px;
-    align-items:flex-start;
-    flex-wrap:wrap;
+    display:flex; gap:28px;
+    align-items:flex-start; flex-wrap:wrap;
   }
-
-  /* ---------- QR CODE ---------- */
   .qr-wrap{
-    flex:0 0 auto;
-    width:180px;
-    height:180px;
-    border:1px solid var(--rule);
-    background:#1e1e1e;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
+    flex:0 0 auto; width:180px; height:180px;
+    border:1px solid var(--rule); background:#1e1e1e;
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
   }
-  .qr-wrap img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    display:block;
-  }
+  .qr-wrap img{width:100%; height:100%; object-fit:contain; display:block;}
   .qr-placeholder{
-    font-family:var(--mono);
-    font-size:10px;
-    color:var(--ink-dim);
-    text-align:center;
-    line-height:1.6;
-    padding:16px;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
+    font-family:var(--mono); font-size:10px;
+    color:var(--ink-dim); text-align:center;
+    line-height:1.6; padding:16px;
+    letter-spacing:0.04em; text-transform:uppercase;
   }
-
-  /* ---------- UPI ID + COPY ---------- */
   .upi-right{
-    flex:1;
-    min-width:200px;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    justify-content:center;
+    flex:1; min-width:200px;
+    display:flex; flex-direction:column; gap:14px; justify-content:center;
   }
-
   .upi-box{
-    background:#1e1e1e;
-    border:1px solid var(--rule);
-    padding:16px 18px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    flex-wrap:wrap;
+    background:#1e1e1e; border:1px solid var(--rule);
+    padding:16px 18px; display:flex;
+    align-items:center; justify-content:space-between;
+    gap:12px; flex-wrap:wrap;
   }
   .upi-id{
-    font-family:var(--mono);
-    font-size:15px;
-    font-weight:600;
-    color:var(--ink);
-    letter-spacing:0.03em;
+    font-family:var(--mono); font-size:15px;
+    font-weight:600; color:var(--ink); letter-spacing:0.03em;
   }
   .upi-copy{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    color:var(--ink);
-    background:transparent;
-    border:1px solid var(--rule);
-    padding:8px 14px;
-    cursor:pointer;
-    transition:all 0.15s ease;
-    flex-shrink:0;
+    font-family:var(--mono); font-size:11px;
+    letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--ink); background:transparent;
+    border:1px solid var(--rule); padding:8px 14px;
+    cursor:pointer; transition:all 0.15s ease; flex-shrink:0;
   }
-  .upi-copy:hover{
-    background:var(--ink);
-    color:var(--paper);
-    border-color:var(--ink);
-  }
-
+  .upi-copy:hover{background:var(--ink); color:var(--paper); border-color:var(--ink);}
   .upi-steps{
-    font-family:var(--mono);
-    font-size:11px;
-    color:var(--ink-dim);
-    line-height:2;
-    letter-spacing:0.02em;
+    font-family:var(--mono); font-size:11px;
+    color:var(--ink-dim); line-height:2; letter-spacing:0.02em;
   }
-  .upi-steps span{
-    color:var(--ink);
-    font-weight:600;
-  }
+  .upi-steps span{color:var(--ink); font-weight:600;}
 
   /* ---------- CALLOUT ---------- */
   .callout{
     border-left:3px solid var(--red);
-    padding:14px 18px;
-    margin:0 0 28px;
+    padding:14px 18px; margin:0 0 28px;
     background:rgba(232,64,31,0.06);
   }
   .callout p{margin-bottom:0; font-size:14px;}
@@ -292,10 +193,8 @@
   footer{
     padding:30px 20px 50px;
     border-top:1px solid var(--rule);
-    font-family:var(--mono);
-    font-size:11px;
-    color:var(--ink-dim);
-    line-height:1.7;
+    font-family:var(--mono); font-size:11px;
+    color:var(--ink-dim); line-height:1.7;
   }
   footer a{color:var(--ink); border-bottom:1px solid var(--red);}
 </style>
@@ -317,51 +216,34 @@
 
   <main>
 
-    <div class="intro-eyebrow">Keep the lights on</div>
+    <div class="intro-eyebrow">Two ways to help</div>
     <h2 class="section-title">No ads. No algorithm.<br>Just you.</h2>
-    <p>The Political Rant runs on zero budget and zero advertising. Every story is picked by hand, every source is credited, and no one is paying to get their coverage here. If you find this useful, a small contribution goes directly toward keeping the site alive.</p>
-    <p><strong>Here's exactly what it costs to run this site:</strong></p>
+    <p>The Political Rant is run by one person, entirely by hand, with no advertising and no backing. Every story is picked manually, every source is credited, and no one pays to be featured here. If you find this useful, here's how you can support it.</p>
 
-    <div class="breakdown">
-      <div class="breakdown-title">Annual running costs</div>
-      <div class="breakdown-row">
-        <span class="breakdown-item">Domain name (.in or .com)</span>
-        <span class="breakdown-cost">Rs 700 – 1,000 / year</span>
-      </div>
-      <div class="breakdown-row">
-        <span class="breakdown-item">Hosting (GitHub Pages)</span>
-        <span class="breakdown-cost">Free</span>
-      </div>
-      <div class="breakdown-row">
-        <span class="breakdown-item">Time spent curating stories</span>
-        <span class="breakdown-cost">Unpaid</span>
-      </div>
-      <div class="breakdown-total">
-        <span class="breakdown-item">Total hard cost</span>
-        <span class="breakdown-cost">~Rs 1,000 / year</span>
-      </div>
+    <!-- SHARE -->
+    <div class="share-section">
+      <div class="share-label">Free — takes 10 seconds</div>
+      <div class="share-title">Share it</div>
+      <div class="share-desc">The single most valuable thing you can do is send this site to one person who'd genuinely find it useful — a friend, a family member, a group chat. No algorithm here means word of mouth is everything.</div>
+      <button class="share-btn" onclick="sharesite()">Share The Political Rant →</button>
     </div>
 
-    <!-- UPI SECTION -->
+    <!-- UPI -->
     <div class="upi-section">
-      <div class="upi-label">Pay via UPI</div>
+      <div class="upi-label">Optional tip via UPI</div>
       <div class="upi-title">Scan or copy the ID</div>
-      <div class="upi-desc">Works with any UPI app — GPay, PhonePe, Paytm, BHIM. Any amount welcome, even Rs 10.</div>
+      <div class="upi-desc">Works with any UPI app — GPay, PhonePe, Paytm, BHIM. Any amount is appreciated, even Rs 10.</div>
 
       <div class="upi-body">
-
-        <!-- QR CODE -->
-        <!-- TO ADD YOUR QR: upload your QR image to GitHub repo, rename it "upi-qr.png", done -->
         <div class="qr-wrap">
           <img src="upi-qr.png" alt="UPI QR code"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="qr-placeholder" style="display:none;">Upload<br>upi-qr.png<br>to repo</div>
         </div>
-
         <div class="upi-right">
           <div class="upi-box">
             <!-- REPLACE yourname@upi WITH YOUR ACTUAL UPI ID -->
-            <span class="upi-id" id="upi-id">9392615805@fam</span>
+            <span class="upi-id" id="upi-id">yourname@upi</span>
             <button class="upi-copy" onclick="copyUPI()">Copy ID</button>
           </div>
           <div class="upi-steps">
@@ -370,18 +252,17 @@
             <span>Step 3</span> — Enter any amount
           </div>
         </div>
-
       </div>
     </div>
 
     <div class="callout">
-      <p>Even Rs 50 from 20 readers covers the domain for a year. Not in a position to contribute? Sharing the site with one person who'd find it useful is genuinely just as valuable.</p>
+      <p>Can't tip right now? Sharing the site genuinely matters more than money at this stage. Every new reader helps.</p>
     </div>
 
   </main>
 
   <footer>
-    <p>All contributions go directly toward running costs. This site has no company behind it, no investors, and no advertising revenue.</p>
+    <p>This site has no company behind it, no investors, and no advertising revenue. Just one person and the news.</p>
     <p style="margin-top:10px;"><a href="index.html">← Back to the feed</a></p>
   </footer>
 
@@ -395,6 +276,22 @@
       btn.textContent = 'Copied!';
       setTimeout(() => btn.textContent = 'Copy ID', 2000);
     });
+  }
+
+  function sharesite(){
+    if(navigator.share){
+      navigator.share({
+        title: 'The Political Rant',
+        text: 'Unfiltered Indian political news from across the spectrum — left, right, and center. No ads, no algorithm.',
+        url: 'https://thepoliticalrant.com'
+      });
+    } else {
+      navigator.clipboard.writeText('https://thepoliticalrant.com').then(() => {
+        const btn = document.querySelector('.share-btn');
+        btn.textContent = 'Link copied!';
+        setTimeout(() => btn.textContent = 'Share The Political Rant →', 2000);
+      });
+    }
   }
 </script>
 
