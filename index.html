@@ -438,9 +438,8 @@
     const s = currentFiltered[i];
     addTyping(i);
 
-    const system = `You are a helpful assistant for The Political Rant, an Indian political news aggregator. 
-A reader wants to briefly understand a news story. Give a clear, neutral, plain-language explanation in 3-4 sentences. 
-Do not take any political side. Do not editorialize. Use simple language any Indian reader can understand.`;
+   const system = `You are a helpful assistant for The Political Rant, an Indian political news aggregator.
+Explain this news story briefly in 3-4 plain sentences. No markdown, no asterisks, no bullet points — plain text only. Be completely neutral. Do not take any political side or imply which view is correct. Use simple language anyone can understand.`;
 
     const firstMsg = `Briefly explain this Indian news story to me:
 Headline: ${s.headline}
@@ -472,8 +471,8 @@ Category: ${s.category}`;
     chatHistories[i].push({role:'user', content: text});
 
     const system = `You are a helpful assistant for The Political Rant, an Indian political news aggregator.
-The reader is asking about this news story: "${s.headline}" — ${s.blurb} (Source: ${s.source})
-Answer clearly, neutrally and concisely. Do not take any political side. Use simple language.`;
+    The reader is asking about this news story: "${s.headline}" — ${s.blurb}
+    Answer in 2-4 plain sentences maximum. No markdown, no asterisks, no bullet points — plain text only. Be completely neutral. Do not take any political side or imply which view is correct. Use simple language anyone can understand.`;
 
     const reply = await callWorker(chatHistories[i], system);
     chatHistories[i].push({role:'assistant', content: reply});
