@@ -44,204 +44,225 @@
 
   .wrap{max-width:680px; margin:0 auto; position:relative; z-index:2;}
 
-  /* ---------- MASTHEAD ---------- */
   header.masthead{
     padding:28px 20px 22px;
     border-bottom:3px solid var(--ink);
   }
   .eyebrow-row{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-    margin-bottom:14px;
+    font-family:var(--mono); font-size:11px;
+    letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--ink-dim); margin-bottom:14px;
   }
   .eyebrow-row .dot{color:var(--red);}
 
   h1.title{
     font-family:var(--display);
     font-size:clamp(32px, 9vw, 46px);
-    line-height:0.95;
-    text-transform:uppercase;
+    line-height:0.95; text-transform:uppercase;
   }
   h1.title .rant{color:var(--red);}
 
   .nav-row{
-    display:flex;
-    gap:16px;
-    margin-top:16px;
-    font-family:var(--mono);
-    font-size:11.5px;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
-    flex-wrap:wrap;
+    display:flex; gap:16px; margin-top:16px;
+    font-family:var(--mono); font-size:11.5px;
+    letter-spacing:0.04em; text-transform:uppercase; flex-wrap:wrap;
   }
   .nav-row a{
-    color:var(--ink-dim);
-    text-decoration:none;
-    border-bottom:1px solid transparent;
-    padding-bottom:2px;
+    color:var(--ink-dim); text-decoration:none;
+    border-bottom:1px solid transparent; padding-bottom:2px;
     transition:all 0.15s ease;
   }
-  .nav-row a:hover, .nav-row a.active{
+  .nav-row a:hover, .nav-row a.active{color:var(--ink); border-bottom-color:var(--red);}
+
+  /* ---------- CHAT BOX ---------- */
+  .chat-box{
+    border:1px solid var(--red);
+    background:#1a1a1a;
+    margin:0 20px;
+  }
+  .chat-box-header{
+    padding:16px 20px;
+    border-bottom:1px solid var(--rule);
+    display:flex; align-items:center; gap:12px;
+  }
+  .chat-box-icon{
+    font-size:18px; line-height:1;
+  }
+  .chat-box-title{
+    font-family:var(--display);
+    font-size:16px;
+  }
+  .chat-box-subtitle{
+    font-family:var(--mono);
+    font-size:10px; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--red);
+    margin-left:auto; white-space:nowrap;
+  }
+  .chat-messages{
+    padding:16px 20px;
+    display:flex; flex-direction:column; gap:12px;
+    min-height:80px; max-height:320px; overflow-y:auto;
+  }
+  .msg{ font-size:14px; line-height:1.55; }
+  .msg-ai .msg-label{
+    font-family:var(--mono); font-size:10px;
+    letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--red); margin-bottom:4px;
+  }
+  .msg-user{ text-align:right; }
+  .msg-user .msg-label{
+    font-family:var(--mono); font-size:10px;
+    letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--ink-dim); margin-bottom:4px;
+  }
+  .msg-text{
+    background:#242424; padding:10px 14px;
+    display:inline-block; text-align:left;
     color:var(--ink);
-    border-bottom-color:var(--red);
+  }
+  .msg-user .msg-text{ background:#1e1e1e; color:var(--ink-dim); }
+
+  .typing{
+    display:inline-flex; gap:4px; align-items:center;
+    padding:10px 14px; background:#242424;
+  }
+  .typing span{
+    width:5px; height:5px; border-radius:50%;
+    background:var(--ink-dim); animation:blink 1.2s infinite;
+  }
+  .typing span:nth-child(2){animation-delay:0.2s;}
+  .typing span:nth-child(3){animation-delay:0.4s;}
+  @keyframes blink{0%,80%,100%{opacity:0.2;}40%{opacity:1;}}
+
+  .chat-suggestions{
+    padding:0 20px 14px;
+    display:flex; gap:8px; flex-wrap:wrap;
+  }
+  .suggestion{
+    font-family:var(--mono); font-size:11px;
+    letter-spacing:0.03em; text-transform:uppercase;
+    border:1px solid var(--rule); color:var(--ink-dim);
+    background:transparent; padding:7px 12px;
+    cursor:pointer; transition:all 0.15s ease;
+    text-align:left;
+  }
+  .suggestion:hover{ border-color:var(--red); color:var(--ink); }
+
+  .chat-input-row{
+    padding:14px 20px;
+    border-top:1px solid var(--rule);
+    display:flex; gap:8px;
+  }
+  .chat-input{
+    flex:1; background:#242424;
+    border:1px solid var(--rule); color:var(--ink);
+    font-family:var(--body); font-size:14px;
+    padding:10px 14px; outline:none;
+    transition:border-color 0.15s ease;
+  }
+  .chat-input:focus{ border-color:var(--ink-dim); }
+  .chat-input::placeholder{ color:var(--ink-dim); }
+  .chat-send{
+    font-family:var(--mono); font-size:11px;
+    letter-spacing:0.04em; text-transform:uppercase;
+    background:var(--ink); color:var(--paper);
+    border:none; padding:10px 16px; cursor:pointer;
+    transition:opacity 0.15s ease; white-space:nowrap;
+  }
+  .chat-send:hover{ opacity:0.85; }
+  .chat-send:disabled{ opacity:0.4; cursor:not-allowed; }
+  .chat-disclaimer{
+    padding:0 20px 14px;
+    font-family:var(--mono); font-size:10px;
+    color:var(--ink-dim); letter-spacing:0.02em;
   }
 
   /* ---------- CONTENT ---------- */
   main{padding:36px 20px 80px;}
 
-  /* table of contents */
   .toc{
     border:1px solid var(--rule);
-    padding:20px 24px;
-    margin-bottom:40px;
+    padding:20px 24px; margin-bottom:40px;
   }
   .toc-title{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-    margin-bottom:12px;
+    font-family:var(--mono); font-size:11px;
+    letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--ink-dim); margin-bottom:12px;
   }
-  .toc ol{
-    padding-left:18px;
-    color:var(--ink-dim);
-    font-size:14px;
-  }
-  .toc li{margin-bottom:6px;}
+  .toc ol{ padding-left:18px; color:var(--ink-dim); font-size:14px; }
+  .toc li{ margin-bottom:6px; }
   .toc a{
-    color:var(--ink);
-    text-decoration:none;
+    color:var(--ink); text-decoration:none;
     border-bottom:1px solid var(--rule);
   }
-  .toc a:hover{border-bottom-color:var(--red); color:var(--red);}
+  .toc a:hover{ border-bottom-color:var(--red); color:var(--red); }
 
-  /* sections */
-  .section{
-    margin-bottom:52px;
-    padding-top:8px;
-  }
-
+  .section{ margin-bottom:52px; padding-top:8px; }
   .section-eyebrow{
-    font-family:var(--mono);
-    font-size:10.5px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--red);
-    margin-bottom:8px;
+    font-family:var(--mono); font-size:10.5px;
+    letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--red); margin-bottom:8px;
   }
 
   h2{
     font-family:var(--display);
     font-size:clamp(22px, 5vw, 28px);
-    line-height:1.15;
-    margin-bottom:16px;
-    scroll-margin-top:24px;
+    line-height:1.15; margin-bottom:16px; scroll-margin-top:24px;
   }
 
   p{
-    font-size:15px;
-    color:var(--ink-dim);
-    margin-bottom:14px;
-    max-width:60ch;
+    font-size:15px; color:var(--ink-dim);
+    margin-bottom:14px; max-width:60ch;
   }
-  p strong{color:var(--ink); font-weight:600;}
+  p strong{ color:var(--ink); font-weight:600; }
 
-  /* callout box */
   .callout{
     border-left:3px solid var(--red);
-    padding:14px 18px;
-    margin:20px 0;
+    padding:14px 18px; margin:20px 0;
     background:rgba(232,64,31,0.06);
   }
-  .callout p{margin-bottom:0; font-size:14px;}
+  .callout p{ margin-bottom:0; font-size:14px; }
 
-  /* party grid */
   .party-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin:20px 0;
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:12px; margin:20px 0;
   }
   @media(max-width:480px){.party-grid{grid-template-columns:1fr;}}
 
-  .party-card{
-    border:1px solid var(--rule);
-    padding:16px;
-  }
-  .party-name{
-    font-family:var(--display);
-    font-size:15px;
-    margin-bottom:4px;
-  }
+  .party-card{ border:1px solid var(--rule); padding:16px; }
+  .party-name{ font-family:var(--display); font-size:15px; margin-bottom:4px; }
   .party-full{
-    font-family:var(--mono);
-    font-size:10px;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-    margin-bottom:10px;
+    font-family:var(--mono); font-size:10px;
+    letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--ink-dim); margin-bottom:10px;
   }
-  .party-desc{
-    font-size:13.5px;
-    color:var(--ink-dim);
-    line-height:1.5;
-  }
+  .party-desc{ font-size:13.5px; color:var(--ink-dim); line-height:1.5; }
 
-  /* structure diagram (CSS only) */
-  .structure{
-    margin:20px 0;
-    font-family:var(--mono);
-    font-size:12.5px;
-  }
-  .structure-row{
-    display:flex; align-items:center; gap:12px;
-    margin-bottom:10px;
-  }
-  .structure-label{
-    width:160px;
-    flex-shrink:0;
-    color:var(--ink);
-    font-weight:600;
-    letter-spacing:0.03em;
-  }
-  .structure-desc{
-    color:var(--ink-dim);
-    font-size:12px;
-    line-height:1.45;
-  }
-  .structure-connector{
-    width:160px;
-    flex-shrink:0;
-    display:flex;
-    align-items:center;
-    gap:6px;
-  }
-  .dot-line{
-    flex:1;
-    border-bottom:1px dashed var(--rule);
-  }
+  .structure{ margin:20px 0; font-family:var(--mono); font-size:12.5px; }
+  .structure-row{ display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+  .structure-label{ width:160px; flex-shrink:0; color:var(--ink); font-weight:600; letter-spacing:0.03em; }
+  .structure-desc{ color:var(--ink-dim); font-size:12px; line-height:1.45; }
 
-  /* divider */
-  .divider{
-    border:none;
-    border-top:1px solid var(--rule);
-    margin:0 0 40px;
-  }
+  .divider{ border:none; border-top:1px solid var(--rule); margin:0 0 40px; }
 
-  /* footer */
+  .lean-key{ display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+  .lean-pill{
+    font-family:var(--mono); font-size:11px;
+    text-transform:uppercase; padding:5px 11px;
+    border:1px solid currentColor; border-radius:100px;
+  }
+  .lean-left{color:#5b9be8;}
+  .lean-right{color:var(--red);}
+  .lean-center{color:var(--ink-dim);}
+  .lean-state-run{color:#e8b800;}
+
   footer{
     padding:30px 20px 50px;
     border-top:1px solid var(--rule);
-    font-family:var(--mono);
-    font-size:11px;
-    color:var(--ink-dim);
-    line-height:1.7;
+    font-family:var(--mono); font-size:11px;
+    color:var(--ink-dim); line-height:1.7;
   }
-  footer a{color:var(--ink); border-bottom:1px solid var(--red); text-decoration:none;}
+  footer a{ color:var(--ink); border-bottom:1px solid var(--red); text-decoration:none; }
 </style>
 </head>
 <body>
@@ -259,6 +280,33 @@
     </nav>
   </header>
 
+  <!-- TOP CHAT BOX -->
+  <div class="chat-box" id="chat-top">
+    <div class="chat-box-header">
+      <span class="chat-box-icon">&#x1F4AC;</span>
+      <span class="chat-box-title">Ask anything about Indian politics</span>
+      <span class="chat-box-subtitle">AI — Unbiased</span>
+    </div>
+    <div class="chat-messages" id="messages-top">
+      <div class="msg msg-ai">
+        <div class="msg-label">AI Explainer</div>
+        <div class="msg-text">Hi! Ask me anything about Indian politics — how Parliament works, what parties stand for, what a news story means, anything. I'll explain it simply and without taking sides.</div>
+      </div>
+    </div>
+    <div class="chat-suggestions" id="suggestions-top">
+      <button class="suggestion" onclick="quickAsk('top', 'What is the difference between Lok Sabha and Rajya Sabha?')">Lok Sabha vs Rajya Sabha</button>
+      <button class="suggestion" onclick="quickAsk('top', 'What does BJP actually stand for and believe in?')">What does BJP stand for?</button>
+      <button class="suggestion" onclick="quickAsk('top', 'How does someone become Prime Minister of India?')">How does someone become PM?</button>
+      <button class="suggestion" onclick="quickAsk('top', 'What is the difference between left wing and right wing politics?')">Left vs right wing</button>
+    </div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="input-top" type="text" placeholder="Type your question here..."
+        onkeydown="if(event.key==='Enter') sendPoliticsMsg('top')">
+      <button class="chat-send" id="send-top" onclick="sendPoliticsMsg('top')">Ask</button>
+    </div>
+    <div class="chat-disclaimer">Answers are a starting point. Always read further for a complete picture.</div>
+  </div>
+
   <main>
 
     <div class="toc">
@@ -275,18 +323,14 @@
       </ol>
     </div>
 
-    <!-- LEFT RIGHT CENTER -->
+    <!-- SECTION: LEFT RIGHT CENTER -->
     <div class="section" id="left-right">
       <div class="section-eyebrow">The Basics</div>
       <h2>What do left, right, and center mean in politics?</h2>
       <p>You'll hear these terms constantly in political coverage, and they're genuinely useful — but only if you know what they actually mean. The labels come from 18th-century France, where supporters of the king sat on the right side of the parliament chamber and reformers sat on the left. The names stuck, and today they describe broad families of political belief found across the world.</p>
-
       <p><strong>Left-wing politics</strong> generally prioritises reducing inequality, expanding the role of the state in the economy, stronger protections for workers, minorities, and marginalised communities, and progressive social values. Left-leaning parties typically want more government spending on public services like healthcare and education, higher taxes on the wealthy, and policies that redistribute wealth downward. In India, the left has historically been associated with the Communist parties, labour unions, and more recently with outlets and movements that focus on caste discrimination, minority rights, and corporate accountability.</p>
-
       <p><strong>Right-wing politics</strong> generally prioritises tradition, national identity, free markets with less government intervention, lower taxes, and stronger enforcement of law and order. Right-leaning parties tend to be sceptical of large welfare programmes, favour private enterprise over state control, and often emphasise cultural or religious heritage as a foundation for national identity. In India, the right is most closely associated with the BJP and its parent ideology of Hindutva — Hindu nationalism — though right-wing economics and right-wing cultural politics don't always go hand in hand.</p>
-
       <p><strong>Center (or centrist) politics</strong> sits between the two. Centrist parties typically accept a mixed economy — some market freedom, some government intervention — and try to appeal to voters across the ideological spectrum rather than committing firmly to either end. In practice, "center" is a broad and sometimes slippery category: many parties describe themselves as centrist simply because it sounds moderate and electable, regardless of where their actual policies land.</p>
-
       <div class="callout">
         <p>These labels are a starting point, not a complete map. A party can be economically left-wing (pro-welfare spending) but socially right-wing (conservative on gender or religion). Many Indian parties, especially regional ones, don't fit neatly into any of these boxes at all — their positions are shaped more by caste arithmetic, community loyalty, and regional interests than by ideology.</p>
       </div>
@@ -294,28 +338,22 @@
 
     <hr class="divider">
 
-    <!-- LEAN TAGS -->
+    <!-- SECTION: LEAN TAGS -->
     <div class="section" id="lean-tags">
       <div class="section-eyebrow">How We Label Sources</div>
       <h2>The lean tags on this site explained</h2>
       <p>Every story on The Political Rant carries a small tag showing the general political leaning of the outlet that published it. Here's exactly what each one means — and what it doesn't mean.</p>
-
       <p><span style="color:#5b9be8; font-weight:600;">LEFT</span> — The outlet generally covers politics from a left-of-centre perspective. It tends to scrutinise the ruling BJP government more critically, focus on issues like minority rights, labour conditions, civil liberties, and inequality, and is more likely to platform voices from marginalised communities. Examples: The Wire, Scroll, Newslaundry.</p>
-
       <p><span style="color:#e8401f; font-weight:600;">RIGHT</span> — The outlet generally covers politics from a right-of-centre or nationalist perspective. It tends to be more favourable toward the BJP and the Hindutva ideological project, critical of Congress and left-leaning politics, and more likely to frame issues through the lens of Hindu culture and Indian nationalism. Examples: OpIndia, Swarajya, Republic TV.</p>
-
       <p><span style="color:#8c8a85; font-weight:600;">CENTER</span> — The outlet occupies broadly mainstream, establishment territory. It doesn't align firmly with either camp, though individual journalists and editors within the same outlet can vary widely. These outlets often reflect the views of India's English-speaking urban professional class. Examples: The Hindu, Indian Express, Hindustan Times, NDTV.</p>
-
-      <p><span style="color:#e8b800; font-weight:600;">STATE-RUN</span> — The outlet is funded and operated by the government — either central or state. This means its editorial line is directly influenced by whoever is in power. This doesn't mean every story it publishes is false or propaganda, but it does mean you should factor in who pays for it. Examples: Doordarshan, All India Radio (Akashvani), PIB.</p>
-
+      <p><span style="color:#e8b800; font-weight:600;">STATE-RUN</span> — The outlet is funded and operated by the government. This means its editorial line is directly influenced by whoever is in power. Examples: Doordarshan, All India Radio (Akashvani), PIB.</p>
       <div class="callout">
-        <p>These tags describe the outlet's general tendency — not the specific story. A right-leaning outlet can publish accurate reporting. A left-leaning outlet can get things wrong. A centrist outlet can have a blind spot. The tags are there to help you calibrate, not to tell you whether to trust something. Read the story, check the source, and make up your own mind — that's the whole point of this site.</p>
+        <p>These tags describe the outlet's general tendency — not the specific story. A right-leaning outlet can publish accurate reporting. A left-leaning outlet can get things wrong. The tags are there to help you calibrate, not to tell you whether to trust something.</p>
       </div>
     </div>
 
     <hr class="divider">
 
-    <!-- SECTION 1 -->
     <div class="section" id="system">
       <div class="section-eyebrow">Section 03</div>
       <h2>How India's government is structured</h2>
@@ -323,7 +361,6 @@
       <p><strong>Federal</strong> means power is split between a central (national) government and 28 state governments. States aren't just administrative units — they have real power over things like policing, healthcare, and education.</p>
       <p><strong>Parliamentary</strong> means the head of government (the Prime Minister) is chosen by the elected legislature (Parliament), not directly by voters. You vote for your local MP, not directly for a Prime Minister.</p>
       <p><strong>Democratic republic</strong> means the head of state (the President) is elected by elected officials rather than being a monarch, and that all power ultimately comes from the people through elections.</p>
-
       <div class="structure">
         <div class="structure-row">
           <span class="structure-label">President</span>
@@ -350,7 +387,6 @@
 
     <hr class="divider">
 
-    <!-- SECTION 2 -->
     <div class="section" id="parliament">
       <div class="section-eyebrow">Section 04</div>
       <h2>What Parliament actually does</h2>
@@ -364,12 +400,10 @@
 
     <hr class="divider">
 
-    <!-- SECTION 3 -->
     <div class="section" id="parties">
       <div class="section-eyebrow">Section 05</div>
       <h2>The major political parties</h2>
       <p>India has hundreds of registered political parties, but a handful dominate national politics. Most governments are formed by coalitions — alliances of multiple parties — because no single party regularly wins an outright majority on its own.</p>
-
       <div class="party-grid">
         <div class="party-card">
           <div class="party-name">BJP</div>
@@ -384,7 +418,7 @@
         <div class="party-card">
           <div class="party-name">AAP</div>
           <div class="party-full">Aam Aadmi Party</div>
-          <div class="party-desc">A newer party that emerged from anti-corruption protests in 2011. Currently governs Punjab. Lost Delhi in the February 2025 election to the BJP after a decade in power, partly due to Arvind Kejriwal's arrest in a corruption case. Positions itself as a centrist alternative focused on governance and public services.</div>
+          <div class="party-desc">A newer party that emerged from anti-corruption protests in 2011. Currently governs Punjab. Lost Delhi in the February 2025 election to the BJP after a decade in power, partly due to Arvind Kejriwal's arrest in a corruption case.</div>
         </div>
         <div class="party-card">
           <div class="party-name">SP, TMC, DMK…</div>
@@ -392,7 +426,6 @@
           <div class="party-desc">Dozens of powerful regional parties dominate individual states — Samajwadi Party in UP, TMC in West Bengal, DMK in Tamil Nadu, Shiv Sena in Maharashtra, and many more. They often hold the balance of power nationally.</div>
         </div>
       </div>
-
       <div class="callout">
         <p>India's politics is not cleanly "left vs right" in the Western sense. Caste, religion, region, language, and community identity all play major roles in how parties form, how people vote, and what issues dominate elections.</p>
       </div>
@@ -400,25 +433,23 @@
 
     <hr class="divider">
 
-    <!-- SECTION 4 -->
     <div class="section" id="elections">
       <div class="section-eyebrow">Section 06</div>
       <h2>How elections work</h2>
       <p>India uses a <strong>First Past the Post (FPTP)</strong> system — the candidate with the most votes in a constituency wins, even if they don't get a majority. This means a candidate can win with 30% of the vote if the other votes are split among several opponents.</p>
       <p>This system tends to benefit larger parties and punish smaller ones. A party can win 20% of votes nationally but very few seats if those votes are spread thinly across constituencies rather than concentrated in specific areas.</p>
-      <p>The <strong>Election Commission of India</strong> is an independent constitutional body that runs elections. It announces election dates, enforces the Model Code of Conduct (a set of rules that kicks in once elections are called), and oversees the entire process. It is widely considered one of the more credible election management bodies in the world, though it is not without critics.</p>
+      <p>The <strong>Election Commission of India</strong> is an independent constitutional body that runs elections. It announces election dates, enforces the Model Code of Conduct, and oversees the entire process.</p>
       <p><strong>General elections</strong> (for Lok Sabha) happen every 5 years and are the biggest democratic exercise on earth — nearly a billion eligible voters, spread over multiple phases across weeks due to logistical scale.</p>
-      <p><strong>State elections</strong> happen on their own schedules, separate from the general election, and are watched closely as political barometers between national votes.</p>
+      <p><strong>State elections</strong> happen on their own schedules and are watched closely as political barometers between national votes.</p>
     </div>
 
     <hr class="divider">
 
-    <!-- SECTION 5 -->
     <div class="section" id="centre-state">
       <div class="section-eyebrow">Section 07</div>
       <h2>Centre vs. State — who controls what</h2>
       <p>The Constitution divides powers between the central government and state governments across three lists:</p>
-      <p><strong>Union List</strong> — only the central government can legislate on these: defence, foreign affairs, nuclear energy, railways, banking, income tax.</p>
+      <p><strong>Union List</strong> — only the central government can legislate: defence, foreign affairs, nuclear energy, railways, banking, income tax.</p>
       <p><strong>State List</strong> — only state governments can legislate: police, public order, agriculture, land, local government, state taxes.</p>
       <p><strong>Concurrent List</strong> — both centre and state can legislate, but central law overrides state law if there's a conflict: education, criminal law, forests, economic planning.</p>
       <div class="callout">
@@ -428,26 +459,144 @@
 
     <hr class="divider">
 
-    <!-- SECTION 6 -->
     <div class="section" id="media">
       <div class="section-eyebrow">Section 08</div>
       <h2>Why the media landscape is complicated</h2>
-      <p>India has hundreds of news channels, thousands of newspapers, and a massive digital media ecosystem — but quantity doesn't equal diversity of viewpoint. A few things are worth knowing as a news consumer:</p>
+      <p>India has hundreds of news channels, thousands of newspapers, and a massive digital media ecosystem — but quantity doesn't equal diversity of viewpoint.</p>
       <p><strong>Most large media houses have ownership ties to businesses</strong> that depend on government relationships — licences, contracts, regulatory approvals. This creates structural pressure on editorial independence that doesn't require anyone to make a phone call or issue an order.</p>
-      <p><strong>Advertising is heavily concentrated.</strong> Government advertising (from central and state governments) is a significant revenue source for many outlets. Outlets perceived as hostile to the ruling establishment can find that revenue reduced.</p>
-      <p><strong>Regional language media</strong> often covers stories that English-language national media ignores entirely — and sometimes covers them very differently. What's front page in a Tamil or Marathi paper can be invisible in national English coverage.</p>
-      <p><strong>Independent digital outlets</strong> (The Wire, Newslaundry, The Ken, Article 14, and others) have emerged partly as a response to these pressures, funded through subscriptions or reader donations rather than advertising. They are not without their own editorial perspectives, but their funding model is different.</p>
-      <p>None of this means every outlet is compromised or that no good journalism gets done. It means reading across sources — which is the whole point of this site — is not just a good habit, it's genuinely necessary to get a fuller picture.</p>
+      <p><strong>Advertising is heavily concentrated.</strong> Government advertising is a significant revenue source for many outlets. Outlets perceived as hostile to the ruling establishment can find that revenue reduced.</p>
+      <p><strong>Regional language media</strong> often covers stories that English-language national media ignores entirely — and sometimes covers them very differently.</p>
+      <p><strong>Independent digital outlets</strong> (The Wire, Newslaundry, The Ken, Article 14, and others) have emerged partly as a response to these pressures, funded through subscriptions or reader donations rather than advertising.</p>
+      <p>None of this means every outlet is compromised or that no good journalism gets done. It means reading across sources — which is the whole point of this site — is not just a good habit, it's genuinely necessary.</p>
     </div>
 
   </main>
 
+  <!-- BOTTOM CHAT BOX -->
+  <div class="chat-box" id="chat-bottom" style="margin:0 20px 60px;">
+    <div class="chat-box-header">
+      <span class="chat-box-icon">&#x1F4AC;</span>
+      <span class="chat-box-title">Still have questions? Ask the AI</span>
+      <span class="chat-box-subtitle">AI — Unbiased</span>
+    </div>
+    <div class="chat-messages" id="messages-bottom">
+      <div class="msg msg-ai">
+        <div class="msg-label">AI Explainer</div>
+        <div class="msg-text">Finished reading? Ask me anything that wasn't covered — about a specific party, a recent bill, a political term, anything at all.</div>
+      </div>
+    </div>
+    <div class="chat-suggestions" id="suggestions-bottom">
+      <button class="suggestion" onclick="quickAsk('bottom', 'What is the caste system and how does it affect Indian politics?')">Caste and politics</button>
+      <button class="suggestion" onclick="quickAsk('bottom', 'What is Hindutva?')">What is Hindutva?</button>
+      <button class="suggestion" onclick="quickAsk('bottom', 'What is the difference between NDA and INDIA bloc?')">NDA vs INDIA bloc</button>
+      <button class="suggestion" onclick="quickAsk('bottom', 'How does the Supreme Court of India work?')">How does the Supreme Court work?</button>
+    </div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="input-bottom" type="text" placeholder="Ask a follow-up question..."
+        onkeydown="if(event.key==='Enter') sendPoliticsMsg('bottom')">
+      <button class="chat-send" id="send-bottom" onclick="sendPoliticsMsg('bottom')">Ask</button>
+    </div>
+    <div class="chat-disclaimer">Answers are a starting point. Always read further for a complete picture.</div>
+  </div>
+
   <footer>
-    <p>This page is a factual overview intended to help readers understand the news, not to advocate for any political position. If you think something here is inaccurate or incomplete, get in touch.</p>
+    <p>This page is a factual overview intended to help readers understand the news, not to advocate for any political position.</p>
     <p style="margin-top:10px;"><a href="index.html">← Back to the feed</a></p>
   </footer>
 
 </div>
+
+<script>
+  // ── CONFIG — same Worker URL as index.html ────────────────
+  const WORKER_URL = 'https://soft-scene-602a.kiyaan-rathod31.workers.dev/';
+  // ─────────────────────────────────────────────────────────
+
+  const SYSTEM_PROMPT = `You are a friendly, knowledgeable assistant on The Political Rant's Politics 101 page — an Indian political news aggregator.
+Your job is to explain Indian politics, government, history, and current affairs in plain, simple language that anyone can understand — including young people with no political background.
+Be completely unbiased. Do not favour any party, ideology, or viewpoint. Present facts and multiple perspectives where relevant.
+Keep answers concise — 3-5 sentences unless the question genuinely needs more. If a question is too vague, ask for clarification.
+If asked about very recent events you may not know about, say so honestly.`;
+
+  const chatHistories = { top: [], bottom: [] };
+
+  async function sendPoliticsMsg(boxId) {
+    const input = document.getElementById('input-' + boxId);
+    const sendBtn = document.getElementById('send-' + boxId);
+    const text = input.value.trim();
+    if (!text) return;
+
+    // Hide suggestions after first message
+    const sugg = document.getElementById('suggestions-' + boxId);
+    if (sugg) sugg.style.display = 'none';
+
+    input.value = '';
+    input.disabled = true;
+    sendBtn.disabled = true;
+
+    addMsg(boxId, 'user', text);
+    addTyping(boxId);
+
+    chatHistories[boxId].push({ role: 'user', content: text });
+
+    const reply = await callWorker(chatHistories[boxId]);
+    chatHistories[boxId].push({ role: 'assistant', content: reply });
+
+    removeTyping(boxId);
+    addMsg(boxId, 'ai', reply);
+
+    input.disabled = false;
+    sendBtn.disabled = false;
+    input.focus();
+  }
+
+  async function quickAsk(boxId, question) {
+    const input = document.getElementById('input-' + boxId);
+    input.value = question;
+    await sendPoliticsMsg(boxId);
+  }
+
+  async function callWorker(messages) {
+    if (WORKER_URL === 'YOUR_CLOUDFLARE_WORKER_URL_HERE') {
+      return 'The AI is not set up yet — the site owner needs to configure the Cloudflare Worker.';
+    }
+    try {
+      const res = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages, system: SYSTEM_PROMPT })
+      });
+      const data = await res.json();
+      if (data.content && data.content[0]) return data.content[0].text;
+      return 'Sorry, something went wrong. Please try again.';
+    } catch (err) {
+      return 'Could not reach the AI. Please check your connection and try again.';
+    }
+  }
+
+  function addMsg(boxId, role, text) {
+    const box = document.getElementById('messages-' + boxId);
+    const div = document.createElement('div');
+    div.className = 'msg msg-' + role;
+    div.innerHTML = `<div class="msg-label">${role === 'ai' ? 'AI Explainer' : 'You'}</div><div class="msg-text">${text}</div>`;
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+  }
+
+  function addTyping(boxId) {
+    const box = document.getElementById('messages-' + boxId);
+    const div = document.createElement('div');
+    div.className = 'msg msg-ai';
+    div.id = 'typing-' + boxId;
+    div.innerHTML = '<div class="msg-label">AI Explainer</div><div class="typing"><span></span><span></span><span></span></div>';
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+  }
+
+  function removeTyping(boxId) {
+    const t = document.getElementById('typing-' + boxId);
+    if (t) t.remove();
+  }
+</script>
 
 </body>
 </html>
