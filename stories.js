@@ -1,27 +1,20 @@
 // ============================================================
 // THE POLITICAL RANT — STORY FEED
 // ============================================================
-// HOW TO EDIT THIS ON YOUR PHONE:
+// HOW TO EDIT ON YOUR PHONE:
+//   Download the GitHub app → open repo → tap stories.js
+//   → tap pencil icon → edit → Commit changes
 //
-// Option A (easiest) — GitHub Mobile App:
-//   Download "GitHub" from the App Store or Play Store
-//   Open your repo → tap the file → tap the pencil icon → edit → commit
-//
-// Option B — GitHub in your phone browser:
-//   Go to github.com → open your repo → tap stories.js
-//   Tap the pencil icon (top right) → edit → scroll down → Commit changes
-//
-// HOW TO ADD A NEW STORY:
-//   Copy one block below, paste at the TOP of the STORIES array.
-//   Fill in your own headline and blurb — don't copy the source's
-//   exact words. Paste the direct article URL (not the homepage).
-//   Save (commit). Site updates in ~30 seconds. Done.
+// HOW TO ADD A STORY:
+//   Copy one block, paste at the TOP of the STORIES array.
+//   Write your own headline and blurb (don't copy the source's
+//   exact words). Paste the direct article URL. Commit. Done.
 //
 // FIELDS:
-//   headline - your own short punchy framing (1 line)
+//   headline - your own short punchy framing
 //   blurb    - 1-2 sentences of context, your own words
 //   source   - outlet name
-//   url      - direct link to the specific article
+//   url      - direct article link (not the homepage)
 //   category - national / states / economy / courts / defence / world / opinion
 //   lean     - left / right / center / state-run
 //   date     - "YYYY-MM-DD"
@@ -29,156 +22,219 @@
 
 const STORIES = [
 
+  // ── 10 JULY 2026 — TODAY ─────────────────────────────────
+
+  {
+    headline: "Modi and Albanese at the MCG today — India-Australia summit culminates at cricket's most iconic ground",
+    blurb: "The third Australia-India Annual Leaders' Summit concludes in Melbourne on July 10 with a joint program at the Melbourne Cricket Ground. Bilateral trade has crossed $50 billion since the India-Australia Economic Cooperation and Trade Agreement was signed in 2022.",
+    source: "PM Australia",
+    url: "https://www.pm.gov.au/media/visit-australia-prime-minister-india",
+    category: "world",
+    lean: "state-run",
+    date: "2026-07-10"
+  },
+  {
+    headline: "Australia will supply uranium to India in the biggest clean energy deal of Modi's three-nation tour",
+    blurb: "India and Australia signed a uranium supply agreement alongside the leaders' summit, giving India access to Australian reserves for its civil nuclear energy programme. The deal sits within the broader Comprehensive Strategic Partnership signed in 2020.",
+    source: "India TV News",
+    url: "https://www.indiatvnews.com/news/world/pm-modi-melbourne-community-event-australia-visit-anthony-albanese-live-updates-2026-07-09-1047672",
+    category: "world",
+    lean: "center",
+    date: "2026-07-10"
+  },
+
+  // ── 9 JULY 2026 ──────────────────────────────────────────
+
+  {
+    headline: "30,000 at Marvel Stadium as Modi and Albanese address the Indian diaspora — Albanese calls Modi a 'living bridge'",
+    blurb: "The Melbourne community event, sold out weeks in advance, drew one of the largest diaspora crowds ever assembled in Australia. Modi credited the Indian diaspora for building the bilateral relationship from the ground up, and said Melbourne's 'mini India' pockets now define its character.",
+    source: "South Asian Herald",
+    url: "https://southasianherald.com/modis-melbourne-visit-puts-india-australia-ties-in-focus/",
+    category: "world",
+    lean: "center",
+    date: "2026-07-09"
+  },
+  {
+    headline: "Modi's Australia visit is strategic pragmatism, not just diaspora diplomacy — but using the community as a geopolitical instrument carries its own risks",
+    blurb: "An analysis from the Australia India Institute argues the Modi-Albanese summit is driven by shared concern about China in the Indo-Pacific, but warns that reducing the million-strong Indian diaspora to an instrument of bilateral economic goals could weaken social cohesion in Australia.",
+    source: "The Conversation",
+    url: "https://theconversation.com/narendra-modis-visit-to-australia-will-be-a-display-of-strategic-pragmatism-286838",
+    category: "opinion",
+    lean: "center",
+    date: "2026-07-09"
+  },
+  {
+    headline: "India's Gaganyaan mission gets closer — CE20 engine successfully hot-tested at ISRO's Mahendragiri facility",
+    blurb: "ISRO completed the flight acceptance hot test of the CE20 cryogenic engine on July 6, the first using a new propulsion system, at 22 tonnes thrust for 25 seconds. The engine will be assembled into the C32 flight stage for the LVM3-M7 uncrewed mission ahead of Gaganyaan.",
+    source: "Indian Defence News",
+    url: "https://www.indiandefensenews.in/",
+    category: "defence",
+    lean: "center",
+    date: "2026-07-09"
+  },
+
+  // ── 8 JULY 2026 ──────────────────────────────────────────
+
+  {
+    headline: "Modi lands in Melbourne for his third Australia visit — the Indian diaspora is now the largest overseas-born migrant group on the continent",
+    blurb: "PM Modi arrived to a guard of honour and diaspora welcome at Park Hyatt Melbourne. The visit marks his third to Australia as PM and his first trip to Melbourne in twelve years, following earlier visits in 2014 and 2023.",
+    source: "South Asian Herald",
+    url: "https://southasianherald.com/modis-melbourne-visit-puts-india-australia-ties-in-focus/",
+    category: "world",
+    lean: "center",
+    date: "2026-07-08"
+  },
+  {
+    headline: "Record Rs 1.78 lakh crore in defence production in FY26 — exports reaching 80+ countries as Atmanirbhar Bharat takes hold",
+    blurb: "India's annual defence production hit its highest ever figure in the financial year just ended, with private sector firms and DPSUs both contributing. Defence exports also hit a record Rs 38,424 crore — up 63% — though India remains the world's second-largest arms importer.",
+    source: "India's World",
+    url: "https://indiasworld.in/strategic-signals-july-2026/",
+    category: "defence",
+    lean: "center",
+    date: "2026-07-08"
+  },
+
+  // ── 7 JULY 2026 ──────────────────────────────────────────
+
+  {
+    headline: "Monsoon Session July 20 to August 13 — 19 sittings, three major bills, and a privilege motion against Rajnath Singh waiting",
+    blurb: "Parliament's Monsoon Session will have 19 sittings. The government wants to push through the 130th Constitution Amendment, the Delimitation Bill and One Nation One Election legislation. The opposition plans to open with privilege proceedings against the Defence Minister for allegedly lying about Operation Sindoor casualties.",
+    source: "Business Today",
+    url: "https://www.businesstoday.in/india/story/monsoon-session-2026-parliament-to-start-from-july-20-a-look-at-key-bills-opposition-agenda-541007-2026-07-04",
+    category: "national",
+    lean: "center",
+    date: "2026-07-07"
+  },
+  {
+    headline: "The 130th Amendment's most dangerous clause stays in — JPC to meet July 17 before Monsoon Session",
+    blurb: "The Joint Parliamentary Committee examining the bill is expected to retain the provision that automatically removes a PM, Chief Minister or minister if they remain in judicial custody for 30 consecutive days. Critics say it is an instrument for political vendetta; the government says it is accountability. The JPC will finalise its report on July 17.",
+    source: "Open The Magazine",
+    url: "https://openthemagazine.com/india/parliament-monsoon-session-2026-to-begin-on-july-20-continue-till-august-13",
+    category: "national",
+    lean: "center",
+    date: "2026-07-07"
+  },
+  {
+    headline: "India's military gets a new top team — Vice Chief, Air Marshal, two Army Commanders all replaced in July 1 reshuffle",
+    blurb: "Lt Gen Sandeep Jain took over as Vice Chief of the Army Staff on July 1. The overhaul also saw a new Vice Chief of Air Staff, Chief of Integrated Defence Staff, and multiple command-level appointments. Several of the new appointees have direct experience from Operation Sindoor.",
+    source: "The Week",
+    url: "https://www.theweek.in/news/defence/2026/07/02/indias-top-military-leadership-gets-a-major-overhaul-here-are-all-the-new-faces.amp.html",
+    category: "defence",
+    lean: "center",
+    date: "2026-07-07"
+  },
+
   // ── 6 JULY 2026 ──────────────────────────────────────────
 
   {
-    headline: "Modi lands in Jakarta — six-day Indo-Pacific tour begins with Indonesia, then Australia and New Zealand",
-    blurb: "PM Modi's fourth visit to Indonesia kicks off today, with bilateral talks with President Prabowo and a visit to the Prambanan temple in Yogyakarta. The tour continues to Melbourne and then Auckland — the first Indian PM state visit to New Zealand in four decades.",
-    source: "DD India",
-    url: "https://ddindia.co.in/2026/07/pm-modi-to-visit-indonesia-australia-and-new-zealand-from-july-6-11-to-hold-bilateral-talks-address-diaspora/",
-    category: "world",
-    lean: "state-run",
-    date: "2026-07-06"
-  },
-  {
-    headline: "Monsoon Session announced: Parliament meets July 20 — Delimitation Bill, One Nation One Election, and the automatic arrest-removal clause all on the table",
-    blurb: "President Murmu has summoned both Houses for July 20 to August 13. The government wants to push through three major bills, including a provision that would automatically remove a PM or CM if they stay in judicial custody for 30 days or more.",
-    source: "Daily Pioneer",
-    url: "https://dailypioneer.com/news/parliament-monsoon-session-to-begin-july-20",
-    category: "national",
+    headline: "India's current account swung to a $4.7 billion surplus in April — remittances surged to $16 billion as exports rose",
+    blurb: "Reversing a $4.8 billion deficit a year earlier, April's current account surplus was driven by stronger services exports and a surge in NRI remittances to $16 billion — up from $9.4 billion. FDI more than doubled to $11.4 billion though FPI outflows also rose sharply.",
+    source: "Banking Finance",
+    url: "https://www.bankingfinance.in/rbi-news-for-july-2026.html",
+    category: "economy",
     lean: "center",
     date: "2026-07-06"
   },
   {
-    headline: "Opposition gearing up to corner Rajnath Singh over Operation Sindoor casualty figures the moment Parliament opens",
-    blurb: "Congress has accused the Defence Minister of telling a 'straightforward, clear-cut lie' to the House about Indian soldier casualties during the operation. The party plans to push for privilege proceedings the moment the Monsoon Session begins.",
-    source: "Doon United",
-    url: "https://www.doonited.in/parliaments-monsoon-session-to-begin-july-20-opposition-likely-to-raise-rajnaths-lie/",
-    category: "national",
-    lean: "left",
+    headline: "Zorawar light tank for the Himalayas, Tejas MK-1A nearing induction, BMD shield tested — India's defence modernisation is accelerating",
+    blurb: "A roundup of India's June-July defence developments: DRDO's multi-layered Ballistic Missile Defence system successfully tested off Chandipur, the CE20 engine human-rated for Gaganyaan, and the indigenous Zorawar light tank reviewed by Modi at L&T's Hazira facility for high-altitude LAC operations.",
+    source: "India's World",
+    url: "https://indiasworld.in/strategic-signals-july-2026/",
+    category: "defence",
+    lean: "right",
     date: "2026-07-06"
   },
   {
-    headline: "US judge rejects DOJ's explanation for dropping Adani case — the Indian orders cited never examined the bribery allegations at all",
-    blurb: "Forced by a federal judge to justify abandoning the Adani prosecution, the DOJ pointed to three Indian decisions as evidence the matter had been locally investigated. The Wire's analysis shows none of the three actually looked at whether public officials received illegal payments.",
-    source: "The Wire",
-    url: "https://m.thewire.in/topic/law/forced-to-explain-adani-u-turn-doj-cites-indian-orders-that-never-examined-bribery-allegations",
-    category: "courts",
-    lean: "left",
-    date: "2026-07-06"
-  },
-  {
-    headline: "Mumbai on red alert as monsoon batters the city — trains delayed, roads flooded, high tide warning",
-    blurb: "Heavy downpours and winds of up to 65 kmph have caused severe waterlogging across Mumbai, with Western Railway trains running late and several low-lying areas cut off. A high tide is expected this afternoon.",
-    source: "NDTV",
-    url: "https://www.ndtv.com/india-news",
+    headline: "Opposition announces it will corner Congress over the 130th Amendment — the bill that could remove a PM for being arrested",
+    blurb: "Congress has accused the government of designing the automatic removal clause to be used against opposition leaders facing politically motivated cases. The BJP says it's about public accountability. Both sides are preparing their arguments for July 20.",
+    source: "Open The Magazine",
+    url: "https://openthemagazine.com/india/parliament-monsoon-session-2026-to-begin-on-july-20-continue-till-august-13",
     category: "national",
     lean: "center",
-    date: "2026-07-06"
-  },
-  {
-    headline: "Teejan Bai, the legendary Pandavani singer who brought Chhattisgarh's oral tradition to the world, is dead",
-    blurb: "The Padma Vibhushan awardee passed away at AIIMS Raipur after a prolonged illness. Teejan Bai was one of the foremost practitioners of Pandavani, the ancient storytelling tradition based on the Mahabharata, and performed internationally for decades.",
-    source: "NDTV",
-    url: "https://www.ndtv.com/india-news",
-    category: "national",
-    lean: "center",
-    date: "2026-07-06"
-  },
-  {
-    headline: "Australian police investigating online threat against Modi ahead of Melbourne visit",
-    blurb: "The Australian Federal Police are examining a social media post threatening PM Modi before his July 8-10 visit to Melbourne. Indian and Australian security agencies are said to be reviewing the matter jointly.",
-    source: "Business Standard",
-    url: "https://www.business-standard.com/india-news",
-    category: "world",
-    lean: "center",
-    date: "2026-07-06"
-  },
-  {
-    headline: "Modi's tour is a statement — India is filling the Indo-Pacific vacuum left by Trump's retreat",
-    blurb: "The PMO frames the Indonesia-Australia-NZ tour as reinforcing India's Act East Policy and Quad commitments. Officials say the timing, as the US scales back regional engagement, is deliberate.",
-    source: "PM India",
-    url: "https://www.pmindia.gov.in/en/news_updates/pms-visit-to-indonesia-australia-and-new-zealand/",
-    category: "world",
-    lean: "state-run",
     date: "2026-07-06"
   },
 
   // ── 5 JULY 2026 ──────────────────────────────────────────
 
   {
-    headline: "Were senators right? Democratic senators asked weeks ago if Adani's $10 billion US investment offer bought him out of criminal charges",
-    blurb: "Warren and Blumenthal wrote to the DOJ in June asking whether Adani's reported offer to invest $10 billion in the US was the real reason charges were dropped. A federal judge this week effectively agreed the explanation given so far doesn't hold up.",
-    source: "The Wire",
-    url: "https://m.thewire.in/article/law/adani-us-investment-offer-influence-doj-bid-to-abandon-criminal-prosecution-democratic-senators-ask",
+    headline: "India's inflation rose to 3.9% in May — food prices the culprit as Middle East war lifts fertiliser and energy costs",
+    blurb: "Consumer prices rose to their highest in 16 months, driven by food inflation hitting 4.8%. West Asia tensions are pushing up global energy and fertiliser prices which are flowing through to Indian food production costs. The reading stays below the RBI's 4% medium-point threshold.",
+    source: "Trading Economics",
+    url: "https://tradingeconomics.com/india/inflation-cpi",
+    category: "economy",
+    lean: "center",
+    date: "2026-07-05"
+  },
+  {
+    headline: "Rajnath Singh accused of lying to Parliament over Operation Sindoor — Congress will push for privilege motion the day Monsoon Session opens",
+    blurb: "Congress alleges the Defence Minister gave Parliament incorrect figures on Indian soldier casualties during Operation Sindoor. The party has made a privilege motion its opening move for July 20, framing it as a question of parliamentary integrity rather than just political point-scoring.",
+    source: "Open The Magazine",
+    url: "https://openthemagazine.com/india/parliament-monsoon-session-2026-to-begin-on-july-20-continue-till-august-13",
+    category: "national",
+    lean: "left",
+    date: "2026-07-05"
+  },
+  {
+    headline: "West Bengal's SIR process now begins — Supreme Court's Bihar verdict opened the door, and the Election Commission has walked through it",
+    blurb: "Following the Supreme Court's May ruling upholding the Bihar electoral roll revision, the Election Commission has announced a Special Intensive Revision for West Bengal. Opposition parties say the same pattern of document requirements that raised fears in Bihar is being replicated.",
+    source: "SC Observer",
+    url: "https://www.scobserver.in/cases/challenge-to-the-ecis-revision-of-electoral-rolls-in-bihar-sir-association-for-democratic-reforms-v-election-commission-of-india/",
+    category: "states",
+    lean: "center",
+    date: "2026-07-05"
+  },
+
+  // ── OPINION / EDITORIAL ───────────────────────────────────
+
+  {
+    headline: "Opinion — The ADR judgment is to our times what ADM Jabalpur was to the Emergency: Yogendra Yadav",
+    blurb: "Political analyst and activist Yogendra Yadav argues the Supreme Court's Bihar SIR ruling is as significant as the 1976 Emergency-era ADM Jabalpur judgment, warning that the EC is now free to conduct voter roll revisions in any state without judicial constraint — and that citizens may now doubt whether the court will protect electoral rights.",
+    source: "The Federal",
+    url: "https://thefederal.com/category/news/yogendra-yadav-sir-adr-judgment-electoral-democracy-246520",
+    category: "opinion",
+    lean: "left",
+    date: "2026-07-05"
+  },
+  {
+    headline: "Opinion — The Supreme Court's Bihar voter roll ruling was correct. Electoral integrity requires periodic revision: Outlook India",
+    blurb: "Outlook's analysis argues that the Supreme Court was right to uphold the Bihar SIR, noting that electoral rolls that haven't been intensively revised since 2003 are overdue for correction. The court found that asking voters to furnish documents does not negate the presumption of citizenship.",
+    source: "Outlook India",
+    url: "https://www.outlookindia.com/national/supreme-court-upholds-bihar-electoral-roll-revision-backs-ecs-power-to-conduct-sir",
+    category: "opinion",
+    lean: "center",
+    date: "2026-07-05"
+  },
+
+  // ── COURTS ────────────────────────────────────────────────
+
+  {
+    headline: "Supreme Court upholds Bihar's Special Intensive Revision of electoral rolls — Election Commission free to conduct SIR in other states",
+    blurb: "The Supreme Court in May unanimously ruled that the Bihar SIR was constitutional. Chief Justice Surya Kant held that accurate electoral rolls are fundamental to free and fair elections and that asking voters to furnish supporting documents during revision does not displace the presumption of citizenship.",
+    source: "Outlook India",
+    url: "https://www.outlookindia.com/national/supreme-court-upholds-bihar-electoral-roll-revision-backs-ecs-power-to-conduct-sir",
     category: "courts",
-    lean: "left",
-    date: "2026-07-05"
-  },
-  {
-    headline: "TMC rebellion tips the scales — 20 of 28 Lok Sabha MPs break away as NDA inches toward two-thirds",
-    blurb: "The defection of the bulk of TMC's parliamentary group to the NCPI, with NDA support, combined with a similar split in the UBT faction, has dramatically shifted the numbers ahead of the Monsoon Session. The Speaker's ruling on whether they get recognised as separate groups will be closely watched.",
-    source: "Bombay Samachar",
-    url: "https://english.bombaysamachar.com/india-news/monsoon-session-2026-to-begin-on-july-20-parliament-to-meet-till-august-13-kiren-rijiju/",
-    category: "national",
     lean: "center",
-    date: "2026-07-05"
-  },
-  {
-    headline: "The JPC bill that could remove a PM for being arrested: committee meeting on July 17 expected to keep the most contentious clause in",
-    blurb: "The Joint Parliamentary Committee examining the 130th Constitutional Amendment — which proposes automatic removal of the PM, Chief Ministers and ministers if they remain in judicial custody for 30 days — is expected to adopt its report before the Monsoon Session begins.",
-    source: "Doon United",
-    url: "https://www.doonited.in/parliaments-monsoon-session-to-begin-july-20-opposition-likely-to-raise-rajnaths-lie/",
-    category: "national",
-    lean: "center",
-    date: "2026-07-05"
-  },
-  {
-    headline: "Modi's three-nation tour is a masterclass in Indo-Pacific positioning — here is what India gains",
-    blurb: "Swarajya frames the Indonesia-Australia-NZ visits as strategic wins: critical minerals access, defence cooperation, diaspora diplomacy, and a signal to ASEAN that India is a dependable partner as American presence in the region wavers.",
-    source: "Swarajya",
-    url: "https://swarajyamag.com/topic/india",
-    category: "world",
-    lean: "right",
-    date: "2026-07-05"
-  },
-  {
-    headline: "India-Indonesia Prambanan visit: Modi's temple diplomacy and what it tells you about civilisational soft power",
-    blurb: "OpIndia covers Modi's planned visit to the UNESCO-listed Hindu temple complex in Yogyakarta as an example of India deploying its civilisational heritage as a tool of foreign policy with Hindu-majority and culturally adjacent nations.",
-    source: "OpIndia",
-    url: "https://www.opindia.com",
-    category: "world",
-    lean: "right",
-    date: "2026-07-05"
-  },
-  {
-    headline: "Tribune: Modi's CEOs Forum in Melbourne is where the real diplomacy happens — trade and tech, not just photo ops",
-    blurb: "Beyond the bilateral meetings, India's PM will address top Australian and Indian business leaders at the India-Australia CEOs Forum. With the India-Australia Economic Cooperation and Trade Agreement already in place, both sides are pushing for deeper investment and supply chain integration.",
-    source: "Tribune India",
-    url: "https://www.tribuneindia.com/news/anthony-albanese/pm-modi-to-interact-with-top-biz-leaders-address-diaspora-during-three-nation-visit-to-indonesia-australia-new-zealand",
-    category: "world",
-    lean: "center",
-    date: "2026-07-05"
+    date: "2026-05-27"
   },
 
-  // ── 4 JULY 2026 ──────────────────────────────────────────
+  // ── ECONOMY ───────────────────────────────────────────────
 
   {
-    headline: "IT Act Section 69A is being used to block satire and political cartoons — and the government won't say why",
-    blurb: "The Wire's investigation documents a pattern of social media takedowns targeting content critical of PM Modi, including political cartoons and opposition posts. Because takedown orders are issued under confidentiality, there is no public record, no stated reason, and no easy way to challenge them.",
-    source: "The Wire",
-    url: "https://m.thewire.in/article/government/online-censorship-it-act-narendra-modi",
-    category: "national",
-    lean: "left",
-    date: "2026-07-04"
+    headline: "RBI's e-Kuber 3.0 is coming — the central bank's 2026-27 agenda includes new banknotes, an alternative payments system, and a review of the RBI Act",
+    blurb: "The RBI has published its agenda for the year: a next-generation core banking system, upgraded banknotes with anti-microbial treatments, and a comprehensive review of the Reserve Bank of India Act. Banknote circulation rose 11.9% to Rs 41.24 lakh crore in FY26.",
+    source: "Banking Finance",
+    url: "https://www.bankingfinance.in/rbi-news-for-july-2026.html",
+    category: "economy",
+    lean: "center",
+    date: "2026-07-06"
   },
   {
-    headline: "HRW: India's proposed IT amendment rules would let any ministry censor any social media user — not just publishers",
-    blurb: "Human Rights Watch says the 2026 draft IT amendment rules would require ordinary social media users who comment on current affairs to comply with the same ethics framework as registered news publishers, with an executive committee empowered to order apologies or removals.",
-    source: "Human Rights Watch",
-    url: "https://www.hrw.org/news/2026/04/17/india-proposed-rules-to-expand-online-censorship",
-    category: "national",
-    lean: "left",
+    headline: "GDP growing at 8.2% year-on-year, RBI projecting 7.3% for the full year — Crisil says India is in a 'rare goldilocks period'",
+    blurb: "India's economy grew at a six-quarter high of 8.2% year-on-year in Q2 FY26, driven by domestic consumption, GST rationalisation and benign inflation. The RBI cut rates to 5.25% and its Governor called current conditions a 'rare goldilocks period' of high growth and low inflation.",
+    source: "DD News",
+    url: "https://ddnews.gov.in/en/indias-gdp-to-grow-7-in-fy26-crisil-raises-growth-forecast/",
+    category: "economy",
+    lean: "state-run",
     date: "2026-07-04"
   }
 
