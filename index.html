@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="google-site-verification" content="O5F91mJ8Juc4Kshj0Erz0IYTDTOReD1HM2LjMpsR1rs" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Political Rant — Unfiltered India</title>
 <meta name="description" content="Raw, unfiltered news aggregation from across the Indian political spectrum.">
@@ -147,6 +146,7 @@
   .lean-badge{
     font-size:9.5px; padding:2px 7px;
     border-radius:3px; border:1px solid currentColor;
+    cursor:pointer;
   }
   .lean-left{color:#5b9be8;}
   .lean-right{color:var(--red);}
@@ -154,6 +154,54 @@
   .lean-state-run{color:var(--yellow);}
   .cat-tag{color:var(--ink-dim);}
   .cat-tag::before{content:"· ";}
+
+  /* ---------- LEAN TOOLTIP ---------- */
+  .lean-wrap{
+    position:relative;
+    display:inline-flex;
+  }
+  .lean-tip{
+    display:none;
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0;
+    width:220px;
+    background:#1e1e1e;
+    border:1px solid var(--rule);
+    border-left:2px solid currentColor;
+    padding:10px 12px;
+    font-family:var(--body);
+    font-size:12px;
+    font-weight:400;
+    color:var(--ink-dim);
+    line-height:1.5;
+    letter-spacing:0;
+    text-transform:none;
+    z-index:100;
+    pointer-events:none;
+  }
+  /* keep tooltip on screen on right side of feed */
+  .lean-tip.flip{
+    left:auto;
+    right:0;
+  }
+  .lean-tip::before{
+    content:"";
+    position:absolute;
+    top:-5px; left:10px;
+    width:8px; height:8px;
+    background:#1e1e1e;
+    border-left:1px solid var(--rule);
+    border-top:1px solid var(--rule);
+    transform:rotate(45deg);
+  }
+  .lean-tip.flip::before{
+    left:auto; right:10px;
+  }
+  .lean-wrap:hover .lean-tip,
+  .lean-wrap.active .lean-tip{
+    display:block;
+  }
 
   .headline{
     font-family:var(--display); font-size:21px;
@@ -332,8 +380,25 @@
 <script>
   // ── CONFIG ──────────────────────────────────────────────────
   // Replace with your Cloudflare Worker URL after setting it up
-  const WORKER_URL = 'https://soft-scene-602a.kiyaan-rathod31.workers.dev/';
+  const WORKER_URL = 'YOUR_CLOUDFLARE_WORKER_URL_HERE';
   // ────────────────────────────────────────────────────────────
+
+  const LEAN_TIPS = {
+    left: "Left-leaning outlet. Tends to scrutinise the ruling government critically and focus on minority rights, civil liberties and inequality.",
+    right: "Right-leaning outlet. Tends to be more favourable toward the BJP and frames issues through Hindu nationalist or cultural conservative ideas.",
+    center: "Mainstream/centrist outlet. Does not firmly align with either side, though individual journalists within it can vary widely.",
+    "state-run": "Government-funded outlet. Its editorial line is directly influenced by whoever is currently in power."
+  };
+
+  function toggleLeanTip(e, el){
+    e.stopPropagation();
+    const isActive = el.classList.contains('active');
+    document.querySelectorAll('.lean-wrap.active').forEach(w => w.classList.remove('active'));
+    if(!isActive) el.classList.add('active');
+  }
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.lean-wrap.active').forEach(w => w.classList.remove('active'));
+  });
 
   const CATEGORIES = ["all","national","states","economy","courts","defence","world","opinion"];
   const feedEl = document.getElementById('feed');
@@ -383,7 +448,10 @@
         <a class="card-link" href="${s.url}" target="_blank" rel="noopener noreferrer">
           <div class="card-meta">
             <span class="source-tag">${s.source}</span>
-            <span class="lean-badge lean-${s.lean}">${leanLabel(s.lean)}</span>
+            <span class="lean-wrap lean-${s.lean}" onclick="toggleLeanTip(event, this)">
+              <span class="lean-badge lean-${s.lean}">${leanLabel(s.lean)}</span>
+              <span class="lean-tip">${LEAN_TIPS[s.lean]}</span>
+            </span>
             <span class="cat-tag">${s.category}</span>
             <span>· ${formatDate(s.date)}</span>
           </div>
@@ -438,8 +506,9 @@
     const s = currentFiltered[i];
     addTyping(i);
 
-   const system = `You are a helpful assistant for The Political Rant, an Indian political news aggregator.
-Explain this news story briefly in 3-4 plain sentences. No markdown, no asterisks, no bullet points — plain text only. Be completely neutral. Do not take any political side or imply which view is correct. Use simple language anyone can understand.`;
+    const system = `You are a helpful assistant for The Political Rant, an Indian political news aggregator. 
+A reader wants to briefly understand a news story. Give a clear, neutral, plain-language explanation in 3-4 sentences. 
+Do not take any political side. Do not editorialize. Use simple language any Indian reader can understand.`;
 
     const firstMsg = `Briefly explain this Indian news story to me:
 Headline: ${s.headline}
@@ -471,8 +540,8 @@ Category: ${s.category}`;
     chatHistories[i].push({role:'user', content: text});
 
     const system = `You are a helpful assistant for The Political Rant, an Indian political news aggregator.
-    The reader is asking about this news story: "${s.headline}" — ${s.blurb}
-    Answer in 2-4 plain sentences maximum. No markdown, no asterisks, no bullet points — plain text only. Be completely neutral. Do not take any political side or imply which view is correct. Use simple language anyone can understand.`;
+The reader is asking about this news story: "${s.headline}" — ${s.blurb} (Source: ${s.source})
+Answer clearly, neutrally and concisely. Do not take any political side. Use simple language.`;
 
     const reply = await callWorker(chatHistories[i], system);
     chatHistories[i].push({role:'assistant', content: reply});
