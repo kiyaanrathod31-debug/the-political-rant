@@ -554,9 +554,6 @@ Answer clearly, neutrally and concisely. Do not take any political side. Use sim
   }
 
   async function callWorker(messages, system){
-    if(WORKER_URL === 'https://soft-scene-602a.kiyaan-rathod31.workers.dev/'){
-      return 'The AI chatbot is not set up yet. The site owner needs to configure the Cloudflare Worker — see the README for instructions.';
-    }
     try {
       const res = await fetch(WORKER_URL, {
         method:'POST',
