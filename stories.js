@@ -22,6 +22,67 @@
 
 const STORIES = [
 
+
+  // ── 24 JULY 2026 — TODAY ─────────────────────────────────
+
+  {
+    headline: "Sonam Wangchuk ends 26-day hunger strike after midnight — JP Nadda and Jitendra Singh meet him at Medanta Hospital with govt assurances",
+    blurb: "Wangchuk broke his fast in the early hours of Friday in the presence of two Union ministers, his wife Gitanjali, and hospital staff. He said the fast ended after a long negotiation on various conditions, warned supporters to stay vigilant against violence, and said he will explain the exact conditions in a separate video. 65 MPs across party lines had signed letters urging him to break the fast before he finally did.",
+    source: "Northlines",
+    url: "https://thenorthlines.com/sonam-wangchuk-ends-26-day-hunger-strike-after-centre-assures-action-on-paper-leaks/",
+    category: "national",
+    lean: "center",
+    date: "2026-07-24"
+  },
+  {
+    headline: "CJP calls PM's paper leak bill a 'band-aid on a fracture' — delegation meets Union ministers as protest enters Day 5",
+    blurb: "A CJP delegation met ministers at the Constitution Club of India on Friday afternoon, continuing their demand for Dharmendra Pradhan's resignation and structural NEET reform. Spokesperson Ashutosh Ranka rejected PM Modi's promised paper leak bill as insufficient, saying fast-track courts and stricter punishment do not address how a question paper was leaked in the first place.",
+    source: "Onmanorama",
+    url: "https://www.onmanorama.com/news/india/2026/07/24/cjp-delegation-meeting-union-ministers-protest-over-neet-row-live.html",
+    category: "national",
+    lean: "center",
+    date: "2026-07-24"
+  },
+
+  // ── 23 JULY 2026 ─────────────────────────────────────────
+
+  {
+    headline: "Modi announces paper leak bill — fast-track courts and stricter punishments to be introduced in Parliament next week",
+    blurb: "PM Modi released a video message on Thursday saying the Cabinet will formalise a comprehensive paper leak bill, with fast-track courts and harsher penalties for those caught leaking examination papers. He said NEET-UG 2026 results for 22 lakh students were already declared on July 19 and the government would not let the academic year be lost. The CJP called it a political gesture, not a structural fix.",
+    source: "Social News XYZ",
+    url: "https://www.socialnews.xyz/2026/07/23/sonam-wangchuk-ends-26-day-hunger-strike-after-govt-intervention/",
+    category: "national",
+    lean: "center",
+    date: "2026-07-23"
+  },
+  {
+    headline: "Government shuts mobile internet in central Delhi and closes 17 metro stations as CJP calls for nationwide protests",
+    blurb: "The government suspended mobile internet services in parts of central Delhi on Thursday and kept 17 metro stations closed as the CJP announced it was taking its agitation nationwide on July 24. Reuters described the measures as some of the most extensive civil restrictions applied in the capital since the anti-CAA protests of 2019-20.",
+    source: "Reuters",
+    url: "https://www.usnews.com/news/world/articles/2026-07-22/fresh-violence-at-delhi-youth-protest-demanding-ministers-resignation",
+    category: "national",
+    lean: "center",
+    date: "2026-07-23"
+  },
+  {
+    headline: "NDA and opposition hold rival protests outside Parliament's Makar Dwar — NDA chants 'sharam karo', opposition chants 'isteefa do'",
+    blurb: "MPs from both camps gathered outside Parliament on Thursday in competing demonstrations over NEET. NDA MPs accused the opposition of politicising the exam scandal and blocking Parliament from holding the very discussion they claim to want. INDIA bloc MPs held banners demanding Dharmendra Pradhan's resignation, with Sonia Gandhi, Rahul Gandhi, Priyanka Gandhi and Akhilesh Yadav all present.",
+    source: "ETV Bharat",
+    url: "https://www.etvbharat.com/en/bharat/live-blog--cjp-delhi-protest-live-updates-july-23-cockroach-janta-party-jantar-mantar-rahul-gandhi-sonam-wangchuk-health-dharmendra-pradhan-resignation-neet-paper-leak-abhijeet-dipke-congress-bjp-parliament-monsoon-session-enn26072300624",
+    category: "national",
+    lean: "center",
+    date: "2026-07-23"
+  },
+  {
+    headline: "CJP founder Abhijeet Dipke is running a fever but refusing to leave — 'I will be back at the protest site by evening'",
+    blurb: "Dipke disclosed on X that he had been ill with fever and severe body pain for days but had been managing with painkillers to continue showing up at Jantar Mantar. He said he needed a few hours of rest but would return by evening, asking supporters not to read anything into his temporary absence from the site.",
+    source: "ETV Bharat",
+    url: "https://www.etvbharat.com/en/bharat/live-blog--cjp-delhi-protest-live-updates-july-23-cockroach-janta-party-jantar-mantar-rahul-gandhi-sonam-wangchuk-health-dharmendra-pradhan-resignation-neet-paper-leak-abhijeet-dipke-congress-bjp-parliament-monsoon-session-enn26072300624",
+    category: "national",
+    lean: "center",
+    date: "2026-07-23"
+  },
+
   // ── 22 JULY 2026 — TODAY ─────────────────────────────────
 
   {
